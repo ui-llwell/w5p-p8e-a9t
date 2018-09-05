@@ -10,6 +10,7 @@ page{
 .wrap{
   width: 630rpx;
   padding:25rpx;
+  /* margin: 35rpx 0; */
   height: 90%;
   background: #fff;
   position: absolute;
@@ -18,4 +19,53 @@ page{
   left: 0;
   right: 0;
   margin: auto;
+}
+.h2 {
+  font-size: 36rpx;
+  text-align: center;
+  padding: 40rpx 0;
+}
+.content {
+  font-size: 24rpx;
+  display: block;
+  width: 100%;
+  height: 520rpx;
+  overflow: scroll;
+  padding-bottom: 100rpx;
+}
+.service {
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  margin-left: 500rpx;
+  position: relative;
+}
+.service image {
+  width: 100%;
+  height: 100%;
+}
+.service_click {
+  position: absolute;
+  left:26rpx;
+  top:15rpx;
+}
+.but {
+  font-size: 28rpx;
+  width: 608rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  background: -webkit-linear-gradient(left,  #F77062 , #FE5196);
+  margin: 0 auto;
+  margin-top: 88rpx;
+  position: relative;
+}
+.but_clickd {
+  width: 608rpx;
+  height: 100rpx;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
