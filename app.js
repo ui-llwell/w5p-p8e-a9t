@@ -1,4 +1,10 @@
 //app.js
+import locales from './utils/locales'
+import T from './utils/i18n'
+
+T.registerLocale(locales)
+T.setLocale('zh')
+wx.T = T
 App({
   onLaunch: function () {
     // 展示本地存储能力

@@ -1,13 +1,13 @@
 //index.js
+import T from '../../utils/i18n'
 //获取应用实例
 const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    index: wx.T._('index'),
+    lang: ['zh', 'ko'],
+    langIndex: 0,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,6 +15,21 @@ Page({
       url: '../logs/logs'
     })
   },
+  ss:function(){
+    wx.navigateTo({
+      url: '../test/test'
+    })
+  },
+  change:function(){
+    this.setData({
+      langIndex: this.data.langIndex==0?1:0
+    })
+    wx.T.setLocale(this.data.lang[this.data.langIndex])
+      this.setData({
+        index: wx.T._('index'),
+      })
+  },
+ 
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
