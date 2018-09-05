@@ -1,4 +1,5 @@
 //test.js
+import event from '../../utils/event'
 import T from '../../utils/i18n'
 //获取应用实例
 const app = getApp()
@@ -9,18 +10,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    test: wx.T._('test'),
+    // test: wx.T.getLanguage().test,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      test: wx.T._('test')
-    })
+    this.setLanguage();	// (1)
+    event.on("languageChanged", this, this.setLanguage);
   },
-
+  setLanguage() {
+    this.setData({
+      test: wx.T.getLanguage().test
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

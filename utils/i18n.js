@@ -1,23 +1,25 @@
-let T = {}
-T.locale = null
-T.locales = {}
+// /utils/i18n.js
+let T = {
+  locale: null,
+  locales: {},
+  langCode: ['zh', 'ko']
+}
 
 T.registerLocale = function (locales) {
   T.locales = locales;
 }
 
 T.setLocale = function (code) {
-  T.locale = code
+  T.locale = code;
 }
 
-T._ = function (line, data) {
-  const locale = T.locale
-  const locales = T.locales
-  if (locale && locales[locale] && locales[locale][line]) {
-    line = locales[locale][line]
-  }
+T.setLocaleByIndex = function (index) {
+  T.setLocale(T.langCode[index]);
+}
 
-  return line
+
+T.getLanguage = function () {
+  return T.locales[T.locale];
 }
 
 export default T
