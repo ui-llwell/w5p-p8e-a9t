@@ -15,11 +15,16 @@
                       消费金额：
                     </view>
                     <view class='warp_h2'>
-                      <view class='warp_h2_img'><image src='/static/img/article_icon_service@3x.png'></image></view>
-                      <view class='warp_h2_text'>30000.00</view>
+                      <view class='warp_h2_img'>₩</view>
+                      <input type='text' class='warp_h2_text'></input>
                     </view>
                     <view class='warp_h3'>
-                    
+                      <view class='warp_h3_left'>
+                        <input type='text' placeholder='添加消费凭证'></input>
+                      </view>
+                      <view class='warp_h3_right'>
+                        <image src='/static/img/article_icon_service@3x.png'></image>
+                      </view>
                     </view>
                     <view class='warp_h4'>
                     

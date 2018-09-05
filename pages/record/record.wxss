@@ -41,7 +41,7 @@ page,
   font-size: 32rpx;
   padding: 50rpx 0;
   text-align: left;
-  text-indent: 40rpx;
+  text-indent: 44rpx;
 }
 .warp_h2 {
   width: 100%;
@@ -54,14 +54,15 @@ page,
   height: 62rpx;
   position: absolute;
   left: 45rpx;
-  top: 20rpx;
+  top: 0rpx;
+  font-size: 60rpx;
 }
 .warp_h2_img image {
   width: 72rpx;
   height: 62rpx;
 }
 .warp_h2_text {
-  width: 300rpx;
+  width: 415rpx;
   height: 112rpx;
   line-height: 112rpx;
   font-size: 44rpx;
@@ -71,4 +72,12 @@ page,
   white-space: nowrap;
   margin-left: 150rpx;
   text-align: left;
+}
+.warp_h3 {
+  width: 100%;
+  height: 82rpx;
+  line-height: 82rpx;
+  text-align: left;
+  text-indent: 44rpx;
+  border-bottom: 1rpx dashed #DFDFDF;
 }

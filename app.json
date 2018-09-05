@@ -2,7 +2,6 @@
   "pages":[
     "pages/record/record",
     "pages/index/index",
-    "pages/store/store",
     "pages/shop/shop",
     "pages/test/test",
     "pages/logs/logs"
