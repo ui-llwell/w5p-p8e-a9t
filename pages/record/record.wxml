@@ -20,7 +20,7 @@
                     </view>
                     <view class='warp_h3'>
                       <view class='warp_h3_left'>
-                        <input type='text' placeholder='添加消费凭证'></input>
+                        <input type='text class='h3_a'  placeholder='添加消费凭证'></input>
                       </view>
                       <view class='warp_h3_right'>
                         <image src='/static/img/article_icon_service@3x.png'></image>

@@ -2,23 +2,23 @@
 <view class='index'>
   <view class='wrap'>
     <view class='h2'>流连代购助手店铺注册协议</view>
-      <text class='content'>流连平台和流连合作店铺双方共同发展，本着平等互惠原则，定义的合作方式及协议如下：
-
-    1. 流连平台为合作店铺引流代购（仅限个人C类护照）到店消费结账时，输入消费金额，并扫描代购的消费二维码，以添加消费记录。
-
-    2. 按月结的方式由合作店铺给流连平台按消费记录进行返点。
-
-         本协议最终解释权归流连平台所有。有任何问题请联系流连客服。
-    </text>
+      <text class='content'>{{index.agreement}}</text>
+      <view class='aaaaa'>
+      <button bindtap='change'>切换语言</button>
+    <button bindtap='ss'>这里是国际化换页测试</button>
+    </view>
     
     <view class='service'>
     <image src='/static/img/article_icon_service@3x.png'></image>
     <contact-button class='service_click' size="120" session-from="weapp" type="default-dark" style='opacity:0'></contact-button></view>
     <button  class='but' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">我要注册成为流连合作商铺</button>
+    
       <view wx:else>请升级微信版本</view>
+      
     <!-- <button class='but'>
       我要注册成为流连合作商铺
       <button class='but_clickd' open-type="getUserInfo"></button>
     </button> -->
+
   </view>
 </view>

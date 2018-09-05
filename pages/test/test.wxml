@@ -15,9 +15,8 @@
         <i-grid-label>Grid</i-grid-label>
     </i-grid-item>
     <i-grid-item>Grid</i-grid-item>
-    <i-grid-item>Grid</i-grid-item>
+    <i-grid-item>{{test.testword}}</i-grid-item>
 </i-grid>
-<input class="inputaa">哎哎哎</input>
 <van-button type="primary">按钮</van-button>
 <icon type="success" size="23"></icon>
 <icon type="success_no_circle" size="23"></icon>

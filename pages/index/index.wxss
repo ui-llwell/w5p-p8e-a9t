@@ -69,3 +69,10 @@ page{
   top: 0;
   left: 0;
 }
+
+
+
+.aaaaa{
+  position: fixed;
+  top: 600rpx;
+}
