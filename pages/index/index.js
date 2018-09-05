@@ -8,10 +8,14 @@ const app = getApp()
 
 Page({
   data: {
+
     language: '',
     index: {},
     languages: ['zh', 'ko'],
     langIndex: 0,
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
   onLoad: function () {
     this.setData({
@@ -42,7 +46,7 @@ Page({
     this.setData({
       langIndex: curLangIndex
     })
-    console.log(curLangIndex)
+    // console.log(curLangIndex)
     wx.T.setLocaleByIndex(curLangIndex);
     this.setLanguage();
     event.emit('languageChanged');
@@ -92,6 +96,20 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  bindGetUserInfo: function (e) {
+    var that = this;
+    //此处授权得到userInfo
+    console.log(e.detail.userInfo);
+    //接下来写业务代码
+
+    //最后，记得返回刚才的页面
+    // wx.navigateBack({
+    //   delta: 1
+    // })
+    wx.switchTab({
+      url: '../record/record',
     })
   }
 })

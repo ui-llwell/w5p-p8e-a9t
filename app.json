@@ -1,14 +1,35 @@
 {
   "pages":[
-    
     "pages/index/index",
+    "pages/record/record",
+    
+    "pages/shop/shop",
     "pages/test/test",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "##F5F5F5",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
-  }
+  },
+"tabBar": {
+  "color": "#a9b7b7",
+  "selectedColor": "#FF0000",
+  "borderStyle": "#FAFAFC",
+  "list": [
+    {
+      "selectedIconPath": "static/img/a1.png",
+      "iconPath": "static/img/a2.png",
+      "pagePath": "pages/record/record",
+      "text": "扫码下单"
+    },
+    {
+      "selectedIconPath": "static/img/b1.png",
+      "iconPath": "static/img/b2.png",
+      "pagePath": "pages/shop/shop",
+      "text": "我的订单"
+    }
+  ]
+}
 }
