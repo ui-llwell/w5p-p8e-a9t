@@ -20,17 +20,18 @@
                     </view>
                     <view class='warp_h3'>
                       <view class='warp_h3_left'>
-                        <input type='text' class='h3_a'  placeholder='添加消费凭证'></input>
+                        <input type='text' class='h3_input'  placeholder='添加消费凭证'></input>
                       </view>
-                      <view class='warp_h3_right'>
-                        <image src='/static/img/article_icon_service@3x.png'></image>
+                      <view class='warp_h3_right' bindtap='pic'>
+                        <image src='/static/img/top_icon_camera@3x.png'></image>
                       </view>
                     </view>
                     <view class='warp_h4'>
-                    
+                      <image src='/static/img/top_icon_scan_pink_normal@3x.png'></image>
                     </view>
                     <view class='warp_h5'>
-                    
+                      <span class='warp_h5_no'>清空</span>
+                      <span class='warp_h5_ok'>确定</span>
                     </view>    
                   </view>
                 </view>
@@ -39,4 +40,5 @@
                 </view>
             </view>
         </view>
+        
 </view>
