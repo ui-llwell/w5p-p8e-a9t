@@ -1,5 +1,5 @@
 /* pages/shop/shop.wxss */
-.shop{
+.wrap{
   width: 640rpx;
   height: 640rpx;
   margin: 40rpx auto;
@@ -28,9 +28,9 @@
   background-image: linear-gradient(-45deg, #F77062 0%, #FE5196 100%);
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
 border-radius: 2px;
-  /* margin: 0 auto; */
-  margin-top: 50rpx;
+margin-top: 50rpx;
 }
+
 .lang{
   text-align: center;
   margin-top: 20rpx;
