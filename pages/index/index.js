@@ -25,8 +25,6 @@ Page({
     // ...
   },
   setLanguage() {
-    console.log('sss')
-    console.log('sss', wx.T.getLanguage())
     this.setData({
       index: wx.T.getLanguage().index
     });

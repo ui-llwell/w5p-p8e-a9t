@@ -1,2 +1,12 @@
 <!--pages/shop/shop.wxml-->
-<text>pages/shop/shop.wxml</text>
+<view class='aaaaa'>
+      <button bindtap='change'>切换语言</button>
+    <button bindtap='ss'>这里是国际化换页测试</button>
+    </view>
+<view class='shop'>
+   <image class='shopImg' src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/photo.png'>
+  </image>
+  <text class='h2'>{{shop.shopName}}</text>
+  <button class='btn'>{{shop.checkRecord}}</button>
+  <view class='lang' bindtap='changeLanguage'>{{shop.lang}}</view>
+</view>

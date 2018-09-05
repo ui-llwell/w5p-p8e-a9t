@@ -1,8 +1,9 @@
 {
   "pages":[
+    "pages/shop/shop",
     "pages/index/index",
     "pages/record/record",
-    "pages/shop/shop",
+    
     "pages/test/test",
     "pages/logs/logs"
   ],
@@ -21,13 +22,13 @@
       "selectedIconPath": "static/img/a1.png",
       "iconPath": "static/img/a2.png",
       "pagePath": "pages/record/record",
-      "text": "扫码下单"
+      "text": "添加记录"
     },
     {
       "selectedIconPath": "static/img/b1.png",
       "iconPath": "static/img/b2.png",
       "pagePath": "pages/shop/shop",
-      "text": "我的订单"
+      "text": "店铺"
     }
   ]
 }
