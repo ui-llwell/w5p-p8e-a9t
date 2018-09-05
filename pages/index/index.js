@@ -19,13 +19,14 @@ Page({
   },
   onLoad: function () {
     this.setData({
-      langIndex: wx.getStorageSync('langIndex')
+      langIndex: wx.getStorageSync('langIndex') || 0
     });
     this.setLanguage();
     // ...
   },
   setLanguage() {
-    console.log('sss',wx.T.getLanguage())
+    console.log('sss')
+    console.log('sss', wx.T.getLanguage())
     this.setData({
       index: wx.T.getLanguage().index
     });
