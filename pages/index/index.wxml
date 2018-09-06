@@ -3,11 +3,6 @@
   <view class='wrap'>
     <view class='h2'>流连代购助手店铺注册协议</view>
       <text class='content'>{{index.agreement}}</text>
-      <view class='aaaaa'>
-      <button bindtap='change'>切换语言</button>
-    <button bindtap='ss'>这里是国际化换页测试</button>
-    </view>
-    
     <view class='service'>
     <image src='/static/img/article_icon_service@3x.png'></image>
     <contact-button class='service_click' size="120" session-from="weapp" type="default-dark" style='opacity:0'></contact-button></view>
