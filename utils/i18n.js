@@ -15,6 +15,8 @@ T.setLocale = function (code) {
 
 T.setLocaleByIndex = function (index) {
   T.setLocale(T.langCode[index]);
+  wx.setStorageSync('langCode', T.langCode[index]);
+  wx.setStorageSync('langIndex', index);
 }
 
 

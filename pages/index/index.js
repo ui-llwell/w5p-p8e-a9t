@@ -8,7 +8,7 @@ const app = getApp()
 
 Page({
   data: {
-
+    shop: null,
     language: '',
     index: {},
     languages: ['zh', 'ko'],
@@ -54,7 +54,12 @@ Page({
     //     index: wx.T._('index'),
     //   })
   },
- 
+  onLoad: function (options) {
+    console.log(options.shop);
+    this.setData({
+      shop: options.shop
+    })
+  },
   // onLoad: function () {
   //   console.log(wx.getStorageSync('langIndex'))
   //   this.setData({
@@ -102,7 +107,22 @@ Page({
     //此处授权得到userInfo
     console.log(e.detail.userInfo);
     //接下来写业务代码
+    app.Ajax(
+      'Users',
+      'POST',
+      'BindShop',
+      { shopCode: this.data.shop, ...e.detail.userInfo },
+      function (json) {
+        console.log(json);
+        if (json.success) {
+          
 
+        } else {
+          console.log('')
+        }
+
+      }
+    );
     //最后，记得返回刚才的页面
     // wx.navigateBack({
     //   delta: 1
