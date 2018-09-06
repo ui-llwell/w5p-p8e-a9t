@@ -1,10 +1,14 @@
 {
   "pages":[
-"pages/details/details",
-    "pages/shop/shop",
-    "pages/index/index",
-    "pages/record/record",
+
+
+
     
+    "pages/index/index",
+    "pages/shop/shop",
+    
+    "pages/record/record",
+    "pages/details/details",
     
     "pages/test/test",
     "pages/logs/logs"
