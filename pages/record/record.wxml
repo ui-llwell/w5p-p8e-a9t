@@ -1,4 +1,5 @@
 <view class='content'>
+<!-- 选项卡特效 -->
 <view class="weui-tab">
             <view class="weui-navbar">
                 <block wx:for="{{tabs}}" wx:key="*this">
@@ -9,6 +10,7 @@
                 <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
             </view>
             <view class="weui-tab__panel">
+            <!-- 以下内容添加消费记录 -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                   <view class='warp'>
                     <view class='warp_h1'>
@@ -16,29 +18,91 @@
                     </view>
                     <view class='warp_h2'>
                       <view class='warp_h2_img'>₩</view>
-                      <input type='text' class='warp_h2_text'></input>
+                      <input type='text' class='warp_h2_text' value='{{ainput_money}}'></input>
                     </view>
                     <view class='warp_h3'>
                       <view class='warp_h3_left'>
-                        <input type='text' class='h3_input'  placeholder='添加消费凭证'></input>
+                        <input type='text' class='h3_input'  placeholder='添加消费凭证' value='{{ainput_text}}'></input>
                       </view>
-                      <view class='warp_h3_right' bindtap='pic'>
-                        <image src='/static/img/top_icon_camera@3x.png'></image>
+                      <!-- 消费记录--点击相机选择照片或拍照事件 -->
+                      <view class='warp_h3_right' bindtap="chooseimage">
+                        <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_camera@3x.png' wx:if="{{atempFilePaths == ''}}"></image>
                       </view>
+                      <image bindtap="setModalStatus" data-status="1" class='warp_h3_right_imgx' wx:if="{{atempFilePaths != ''}}" src="{{atempFilePaths }}" catchTap="chooseImageTap" mode="aspectFit"  />
                     </view>
-                    <view class='warp_h4'>
-                      <image src='/static/img/top_icon_scan_pink_normal@3x.png'></image>
+                    <!-- 消费记录--扫描二维码事件 -->
+                    <view class='warp_h4' bindtap="toSweepOrder">
+                      <image src='{{scanninga}}'></image>
+                      <image class='warp_h4_img' src='{{scanningb}}'></image>
                     </view>
+                    <!-- 消费记录--清空事件 -->
                     <view class='warp_h5'>
-                      <span class='warp_h5_no'>清空</span>
+                      <span class='warp_h5_no' bindtap='empty'>清空</span>
                       <span class='warp_h5_ok'>确定</span>
                     </view>    
                   </view>
                 </view>
                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-                  2
+                  <!-- 添加退费记录 -->
+                  <view class='warp'>
+                    <view class='warp_h1'>
+                      消费金额：
+                    </view>
+                    <view class='warp_h2'>
+                      <view class='warp_h2_img'>₩</view>
+                      <input type='text' class='warp_h2_text' value='{{binput_money}}'></input>
+                    </view>
+                    <view class='warp_h3'>
+                      <view class='warp_h3_left'>
+                        <input type='text' class='h3_input'  placeholder='添加消费凭证' value='{{binput_text}}'></input>
+                      </view>
+                      <!-- 退费记录-- 点击选择相册或相机事件 -->
+                      <view class='warp_h3_right' bindtap="chooseimageb">
+                        <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_camera@3x.png' wx:if="{{btempFilePaths == ''}}"></image>
+                      </view>
+                      <image bindtap="setModalStatusb" data-status="1" class='warp_h3_right_imgx' wx:if="{{btempFilePaths != ''}}" src="{{btempFilePaths }}" catchTap="chooseImageTapb" mode="aspectFit"  />
+                    </view>
+                    <!-- 退费记录-- 扫描二维码事件 -->
+                    <view class='warp_h4' bindtap="toSweepOrderb">
+                      <image src='{{scanningc}}'></image>
+                      <image class='warp_h4_img' src='{{scanningd}}'></image>
+                    </view>
+                    <!-- 退费记录-- 清空数据事件 -->
+                    <view class='warp_h5'>
+                      <span class='warp_h5_no' bindtap='emptyb' style='color:#5A8BDA'>清空</span>
+                      <span class='warp_h5_ok' style='color:#5A8BDA'>确定</span>
+                    </view>    
+                  </view>
+
                 </view>
             </view>
         </view>
+        <!-- 添加消费记录---图片放大缩小事件 -->
+        <view class="drawer_screen" bindtap="setModalStatus" data-status="0" wx:if="{{showModalStatus}}"></view>
+        <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+        <!-- bindtap="setModalStatus" 取消按钮事件-->
+          
+          <view class="drawer_attr_content">
+            <view class="text_center">
+              <image class="drawer_image" mode='widthFix' src="{{atempFilePaths}}"></image>
+            </view>
+          </view>
+          <view class="close_icon" bindtap="chooseimage" data-status="0">×</view>
+        </view>
         
+
+          <!-- 添加退费记录---图片放大缩小事件 -->
+        <view class="drawer_screen" bindtap="setModalStatusb" data-status="0" wx:if="{{showModalStatusb}}"></view>
+        <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatusb}}">
+        <!-- bindtap="setModalStatus" 取消按钮事件-->
+          
+          <view class="drawer_attr_content">
+            <view class="text_center">
+              <image class="drawer_image" mode='widthFix' src="{{btempFilePaths}}"></image>
+            </view>
+          </view>
+          <view class="close_icon" bindtap="chooseimageb" data-status="0">×</view>
+        </view>
+
+
 </view>

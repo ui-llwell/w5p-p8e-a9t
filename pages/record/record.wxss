@@ -3,9 +3,8 @@
 position:relative;
 width:750rpx;
 height:100%;
-/* background: url('http://ecc-product.oss-cn-beijing.aliyuncs.com/xcx/CustomerServices.png') no-repeat left top; */
-background: #eee;
-background-size: 100% 100%;
+background: url('http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/bg@3x.jpg') no-repeat left top;
+background-size: cover;
 display: block;
 }
 page,
@@ -79,6 +78,7 @@ page,
   line-height: 82rpx;
   text-align: left;
   border-bottom: 1rpx dashed #DFDFDF;
+  position: relative;
 }
 .warp_h3_left {
   float: left;
@@ -107,16 +107,31 @@ page,
   height: 100%;
   display: block;
 }
-
+.warp_h3_right_imgx {
+  display: block;
+  width: 80rpx;
+  height: 72rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 3rpx;
+}
 .warp_h4 {
   width: 210rpx;
   height: 210rpx;
   margin: 74rpx auto 10rpx auto;
+  position: relative;
 }
 .warp_h4 image {
   width: 210rpx;
   height: 210rpx;
   display: flex;
+}
+.warp_h4 .warp_h4_img {
+  width: 210rpx;
+  height: 210rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .warp_h5 {
   display:flex;
@@ -127,3 +142,61 @@ page,
   flex: 1;
   color: #FC5B84;
 }
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.drawer_attr_box {
+  width: 416rpx;
+  height: 690rpx;
+  /* overflow: hidden; */
+  position: fixed;
+  top: 172rpx;
+  left: 167rpx;
+  z-index: 2000;
+}
+.close_icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-left: -40rpx;
+  padding: 10rpx;
+  color: #fff;
+  background: #fff url(http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_photo_icon_camera@3x.png) no-repeat center top;
+  background-size: 100% 100%;
+  margin: 30rpx auto 0 auto;
+}
+.drawer_attr_content {
+  width: 416rpx;
+  height: 690rpx;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.text_center {
+  width: 416rpx;
+  height: 690rpx;
+}
+.drawer_image {
+  display: block;
+  width: 416rpx;
+}
+.drawer_desc{
+    font-size:26rpx;
+    margin:20rpx;
+}
+.btn {
+  width: 80%;
+  padding: 15rpx 0;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
