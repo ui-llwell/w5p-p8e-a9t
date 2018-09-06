@@ -1,9 +1,10 @@
 {
   "pages":[
-
+"pages/details/details",
     "pages/shop/shop",
     "pages/index/index",
     "pages/record/record",
+    
     
     "pages/test/test",
     "pages/logs/logs"

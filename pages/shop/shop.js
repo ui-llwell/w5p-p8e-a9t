@@ -100,5 +100,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  
+  goToDetails: function () {
+    wx.navigateTo({
+      url: '../details/details'
+    })
   }
 })

@@ -1,0 +1,50 @@
+<!--pages/details/details.wxml-->
+<van-popup show="{{ show }}" bind:close="onClose">
+<image class='popupImg' mode='widthFix' src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/photo.png'></image>
+</van-popup>
+<view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+<view class='content-list'>
+  <view class='unit'>
+    <view class='unit-title clearfix'>
+      <view class='unit-title-name fl'>狗唤</view>
+      <view class='unit-title-time fr'>2018-10-31 13:00</view>
+    </view>
+    <view class='unit-detail clearfix'>
+      <view class='unit-detail-mes fl'>
+        <rich-text>
+          消费金额：<text class=''>₩3000.00</text>
+        </rich-text>
+        <rich-text>
+          返点率：5%，预计返利：<text class=''>₩500.00</text>
+        </rich-text>
+        <rich-text>
+          消费凭证：12345456564748654
+        </rich-text>
+      </view> 
+        <image catchtap='checkImg' class='unit-detail-img fr'  src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/photo.png'></image>
+    </view>
+  </view>
+</view>
+<view class='content-conclusion'>
+  <rich-text>消费总金额：₩300000.000</rich-text>
+  <rich-text>退费总金额：₩300000.000</rich-text>
+  <rich-text>预计返利总金额：₩300000.000</rich-text>
+</view>
+
+
+
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
+            </view>
+        </view>

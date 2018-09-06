@@ -1,0 +1,76 @@
+/* pages/details/details.wxss */
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+
+.weui-navbar{
+  z-index: 5;
+  background: #F5F5F5;
+box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
+}
+.weui-navbar__slider{
+  text-align: center;
+  width: 80rpx;
+  background: #ED4C4C;
+}
+.weui-navbar__item.weui-bar__item_on{
+  font-family: PingFangSC-Regular;
+font-size: 16px;
+color: #ED4C4C;
+letter-spacing: 0.19px;
+text-align: center;
+}
+
+
+.weui-tab__content{
+    padding: 20rpx 0rpx;
+}
+.unit{
+  padding: 0rpx 30rpx;
+  border-bottom: 1px solid #EAEAEA
+}
+.unit-title{
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1px dashed #EDEDED;
+}
+.unit-title-name{
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #000000;
+  letter-spacing: 0;
+}
+.unit-title-time{
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: #989898;
+  letter-spacing: 0.14px;
+}
+.unit-detail{
+  padding: 24rpx 0;
+}
+
+.unit-detail-mes{
+  
+  width: 540rpx;
+  font-size: 12px;
+  color: #000000;
+}
+.unit-detail-img{
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.content-conclusion{
+  font-family: PingFangSC-Light;
+  font-size: 14px;
+  color: #000000;
+  line-height: 22px;
+  text-align: right;
+  padding: 25rpx 15rpx;
+}
