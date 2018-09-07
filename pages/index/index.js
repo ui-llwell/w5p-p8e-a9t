@@ -17,11 +17,16 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
-  onLoad: function () {
+  onLoad: function (options) {
     this.setData({
       langIndex: wx.getStorageSync('langIndex') || 0
     });
     this.setLanguage();
+
+    
+    this.setData({
+      shop: options.shop
+    })
     // ...
   },
   setLanguage() {
@@ -54,12 +59,7 @@ Page({
     //     index: wx.T._('index'),
     //   })
   },
-  onLoad: function (options) {
-    console.log(options.shop);
-    this.setData({
-      shop: options.shop
-    })
-  },
+
   // onLoad: function () {
   //   console.log(wx.getStorageSync('langIndex'))
   //   this.setData({
@@ -95,7 +95,7 @@ Page({
   //   }
   // },
   getUserInfo: function(e) {
-    console.log(e)
+    // console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -105,7 +105,7 @@ Page({
   bindGetUserInfo: function (e) {
     var that = this;
     //此处授权得到userInfo
-    console.log(e.detail.userInfo);
+    // console.log(e.detail.userInfo);
     //接下来写业务代码
     app.Ajax(
       'Users',

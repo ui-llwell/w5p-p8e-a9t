@@ -1,32 +1,28 @@
 // pages/details/details.js
 
-
+import event from '../../utils/event'
+import T from '../../utils/i18n'
 var sliderWidth = 40; // 需要设置slider的宽度，用于计算中间位置
 
 Page({
-  
-  
-  
-
-
   /**
    * 页面的初始数据
    */
   data: {
-    tabs: ["全部", "未返利", "已返利"],
+    tabs: ["", "", ""],
+    details:{},
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
     show: false,
-
-
-    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
+    this.setLanguages();
+
     var that = this;
     wx.getSystemInfo({
       success: function (res) {
@@ -35,6 +31,21 @@ Page({
           sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
         });
       }
+    });
+  },
+  setLanguages() {
+    console.log('record')
+    this.setData({
+      details: wx.T.getLanguage().details
+    });
+    wx.setNavigationBarTitle({
+      title: wx.T.getLanguage().details.navigationBarTitle
+    });
+  },
+  tabClick: function (e) {
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
     });
   },
   tabClick: function (e) {

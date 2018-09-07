@@ -1,70 +1,10 @@
 // pages/record/record.js
+import event from '../../utils/event'
+import T from '../../utils/i18n'
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 Page({
-
-  /**
-   * 页面的初始数据
-   */
- 
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
   data: {
-    tabs: ["添加消费记录", "添加退费记录"],
+    tabs: ["", ""],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -79,7 +19,11 @@ Page({
     binput_money: '',
     binput_text: '',
   },
+  onShow() {
+    this.setLanguages();
+  },
   onLoad: function () {
+     
     var that = this;
     wx.getSystemInfo({
       success: function (res) {
@@ -89,6 +33,22 @@ Page({
         });
       }
     });
+  },
+  setLanguages() {
+    this.setData({
+      record: wx.T.getLanguage().record
+    });
+    wx.setNavigationBarTitle({
+      title: wx.T.getLanguage().record.navigationBarTitle
+    });
+    wx.setTabBarItem({
+      index: 0,
+      text: wx.T.getLanguage().tabbar.itemText1
+    });
+    wx.setTabBarItem({
+      index: 1,
+      text: wx.T.getLanguage().tabbar.itemText2
+    })
   },
   tabClick: function (e) {
     this.setData({
@@ -122,7 +82,7 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: [type],
       success: function (res) {
-        console.log(res);
+        // console.log(res);
         that.setData({
           atempFilePaths: res.tempFilePaths[0],
         })
@@ -144,9 +104,8 @@ Page({
   toSweepOrder: function () {
     wx.scanCode({
       success: (res) => {
-        console.log(111)
         this.setData({
-          scanningb: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_selected@3x.png',
+          scanningb: wx.T.getLanguage().record.scanImgUrlConsumerSuccess
         })
       },
       fail: (res) => {
@@ -158,7 +117,7 @@ Page({
   //添加消费记录 图片放大缩小展示代码
   // showModal和hideModal函数可以合并为一个函数，需要在组件中设置状态值
   setModalStatus: function (e) {
-    console.log("设置显示状态，1显示0不显示", e.currentTarget.dataset.status);
+    // console.log("设置显示状态，1显示0不显示", e.currentTarget.dataset.status);
     var animation = wx.createAnimation({
       duration: 200,
       timingFunction: "linear",
@@ -242,7 +201,7 @@ emptyb: function () {
     wx.scanCode({
       success: (res) => {
         this.setData({
-          scanningd: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_selected@3x.png',
+          scanningd: wx.T.getLanguage().record.scanImgUrlRefundSuccess,
         })
       },
       fail: (res) => {
@@ -253,7 +212,7 @@ emptyb: function () {
 
   // 添加退费记录 图片放大缩小展示代码
   setModalStatusb: function (e) {
-    console.log("设置显示状态，1显示0不显示", e.currentTarget.dataset.status);
+    // console.log("设置显示状态，1显示0不显示", e.currentTarget.dataset.status);
     var animation = wx.createAnimation({
       duration: 200,
       timingFunction: "linear",

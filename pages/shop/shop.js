@@ -12,7 +12,6 @@ Page({
     languages: ['zh', 'ko'],
     langIndex: 0,
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -20,9 +19,10 @@ Page({
     this.setData({
       langIndex: wx.getStorageSync('langIndex') || 0
     });
-    this.setLanguage();
+    // this.setLanguage();
   },
   setLanguage() {
+    console.log('shop')
     this.setData({
       shop: wx.T.getLanguage().shop
     });
@@ -48,10 +48,6 @@ Page({
     wx.T.setLocaleByIndex(curLangIndex);
     this.setLanguage();
     event.emit('languageChanged');
-    // wx.T.setLocale(this.data.lang[this.data.langIndex])
-    //   this.setData({
-    //     index: wx.T._('index'),
-    //   })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -64,7 +60,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setLanguage();
   },
 
   /**
