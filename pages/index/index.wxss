@@ -73,9 +73,3 @@ border-radius: 2px;
   left: 0;
 }
 
-
-
-.aaaaa{
-  position: fixed;
-  top: 700rpx;
-}
