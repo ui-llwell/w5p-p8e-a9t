@@ -32,6 +32,16 @@ export default {
     "details": {
       "navigationBarTitle": "店铺记录详情",
       "tabs": ["全部", "未返利", "已返利"],
+      "consumeAmount": "消费金额",
+      "refundAmount": "退费金额",
+      "rebatesRate": "返点率",
+      "consumeRebate": "预计返利",
+      "refundRebate": "预计退利",
+      "credentials": "消费凭证",
+      "consumeAll": "消费总金额",
+      "refundAll": "退费总金额",
+      "rebatesAll": "预计返利总金额",
+      "noRecord":'您还没有记录哦'
     },
     "test": {
       "navigationBarTitle": "我是测试",
@@ -74,6 +84,16 @@ export default {
     "details": {
       "navigationBarTitle": "ShopRecordDetails",
       "tabs": ["All", "NotRebate", "HadRebate"],
+      "consumeAmount": "consumeAmount",
+      "refundAmount": "refundAmount",
+      "rebatesRate": "rebatesRate",
+      "consumeRebate": "consumeRebate",
+      "refundRebate": "refundRebate",
+      "credentials": "credentials",
+      "consumeAll": "consumeAll",
+      "refundAll": "refundAll",
+      "rebatesAll": "rebatesAll",
+      "noRecord": 'Oh you dont have record'
     },
     "test": {
       "navigationBarTitle": "Test",

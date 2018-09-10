@@ -15,6 +15,18 @@ Page({
     sliderOffset: 0,
     sliderLeft: 0,
     show: false,
+
+
+    allList:[
+      //  0未返利1已返利 0消费1退费
+      { name: '大红花', time: '2015-02-12', payIf: 0, coOrRe: 1, custome: '1000', rebatesDot: '1%', rebate: '100', credentials: '111111111111111', url: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/photo.png'},
+      { name: '红花', time: '2015-02-12', payIf: 1, coOrRe: 1, custome: '2000', rebatesDot: '2%', rebate: '200', credentials: '222222222222222', url: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/photo.png'},
+      { name: '花', time: '2015-02-12', payIf: 0, coOrRe: 0, custome: '3000', rebatesDot: '3%', rebate: '300', credentials: '333333333333333', url: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/photo.png'},
+      { name: '大', time: '2015-02-12', payIf: 1, coOrRe: 0, custome: '4000', rebatesDot: '4%', rebate: '400', credentials: '444444444444444', url: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/photo.png'},
+    ],
+    customeAll:'5596800',
+    refundAll: '96800',
+    rebateAll: '6800',
   },
 
   /**

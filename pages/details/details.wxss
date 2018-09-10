@@ -11,7 +11,7 @@ page,
 .weui-navbar{
   z-index: 5;
   background: #F5F5F5;
-box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
 }
 .weui-navbar__slider{
   text-align: center;
@@ -33,6 +33,20 @@ text-align: center;
 .unit{
   padding: 0rpx 30rpx;
   border-bottom: 1px solid #EAEAEA
+}
+.gray, 
+.gray .consume,
+.gray .refund,
+.gray .unit-title-name,
+.gray .unit-title-time,  
+.gray .unit-detail-mes{
+  color:#999;
+}
+.consume{
+  color:  #ff0000
+}
+.refund{
+  color:  #5d8ddc
 }
 .unit-title{
   height: 90rpx;

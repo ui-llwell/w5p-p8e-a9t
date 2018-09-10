@@ -17,6 +17,9 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
+  onShow: function () {
+    this.setLanguage();
+  },
   onLoad: function (options) {
     this.setData({
       langIndex: wx.getStorageSync('langIndex') || 0
@@ -32,6 +35,9 @@ Page({
   setLanguage() {
     this.setData({
       index: wx.T.getLanguage().index
+    });
+    wx.setNavigationBarTitle({
+      title: wx.T.getLanguage().index.navigationBarTitle
     });
   },
   //事件处理函数
