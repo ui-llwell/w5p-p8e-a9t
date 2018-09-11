@@ -16,9 +16,9 @@ export default {
       "addConsumerCredentials": "添加消费凭证",
       "addRefundCredentials": "添加退费凭证",
       "scanImgUrlConsumerBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png",
-      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_selected@3x.png",
+      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_selected@3x.png",
       
-      "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png",
+      "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png",
       "scanImgUrlRefundSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_selected@3x.png",
       "empty": "清空",
       "ensure": "确定",
@@ -67,9 +67,9 @@ export default {
       "addRefundCredentials": "addRefundCredentials",
       
       "scanImgUrlConsumerBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png",
-      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_selected@3x.png",
+      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_selected@3x.png",
 
-      "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png",
+      "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png",
       "scanImgUrlRefundSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_selected@3x.png",
       "empty": "empty",
       "ensure": "ensure",

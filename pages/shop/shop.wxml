@@ -4,7 +4,7 @@
   <image class='shopImg' src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/Shop_Photo@3x.png'>
     </image>
 </view>
-  <text class='h2'>{{shop.shopName}}</text>
+  <text class='h2'>{{shopName}}</text>
   <button class='btn' bindtap='goToDetails'>{{shop.checkRecord}}</button>
   <view class='lang' bindtap='changeLanguage'>{{shop.lang}}</view>
 </view>

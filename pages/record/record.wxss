@@ -57,7 +57,7 @@ box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
   height: 62rpx;
   position: absolute;
   left: 45rpx;
-  top: 0rpx;
+  top: 8rpx;
   font-size: 60rpx;
 }
 .warp_h2_img image {
@@ -187,7 +187,7 @@ box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
 }
 .text_center {
   width: 416rpx;
-  height: 690rpx;
+  /* height: 690rpx; */
 }
 .drawer_image {
   display: block;

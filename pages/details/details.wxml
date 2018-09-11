@@ -1,6 +1,6 @@
 <!--pages/details/details.wxml-->
 <van-popup show="{{ show }}" bind:close="onClose">
-<image class='popupImg' mode='widthFix' src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/A-test/photo.png'></image>
+<image class='popupImg' mode='widthFix' src='{{showImg}}'></image>
 </van-popup>
 <view class="weui-tab">
             <view class="weui-navbar">
@@ -13,49 +13,107 @@
             </view>
             <view class="weui-tab__panel">
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-<view class='content-list'>
-  <view wx:for="{{allList}}">
-  
-  <view class="unit {{item.payIf==1?'gray':''}}">
-    <view class='unit-title clearfix'>
-      <view class='unit-title-name fl'>{{item.name}}</view>
-      <view class='unit-title-time fr'>{{item.time}}</view>
-    </view>
-    <view class='unit-detail clearfix'>
-      <view class='unit-detail-mes fl'>
-        <rich-text>
-          {{item.coOrRe==1?details.consumeAmount:details.refundAmount}}：<text class="{{item.coOrRe==1?'consume':'refund'}}">₩{{item.custome}}</text>
-        </rich-text>
-        <rich-text>
-          {{details.rebatesRate}}：{{item.rebatesDot}}， {{item.coOrRe==1?details.consumeRebate:details.refundRebate}}：<text class="{{item.coOrRe==1?'consume':'refund'}}">₩{{item.rebate}}</text>
-        </rich-text>
-        <rich-text>
-          {{details.credentials}}：{{item.credentials}}
-        </rich-text>
-      </view> 
-        <image catchtap='checkImg' class='unit-detail-img fr'  src='{{item.url}}'></image>
-    </view>
-  </view>
-</view>
-</view>
-<view class='content-conclusion'>
-  <rich-text>{{details.consumeAll}}：<text class="consume">₩{{customeAll}}</text></rich-text>
-  <rich-text>{{details.refundAll}}：<text class="refund">₩{{refundAll}}</text></rich-text>
-  <rich-text>{{details.rebatesAll}}：<text class="consume">₩{{rebateAll}}</text></rich-text>
-</view>
-<!-- 当内容List 不为空时隐藏 -->
-<view hidden="{{allList != ''}}"> {{details.noRecord}}</view>
-
-
-                </view>
-                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容
+                <!-- ---------------------------全部------------------------------ -->
+                  <view class='content-list'>
+                    <view wx:for="{{recordData.all.listAll}}" wx:key="recordId">
+                    
+                      <view class="unit {{item.payState==1?'gray':''}}">
+                        <view class='unit-title clearfix'>
+                          <view class='unit-title-name fl'>{{item.userName}}</view>
+                          <view class='unit-title-time fr'>{{item.recordTime}}</view>
+                        </view>
+                        <view class='unit-detail clearfix'>
+                          <view class='unit-detail-mes fl'>
+                            <rich-text>
+                              {{item.inputState==0?details.consumeAmount:details.refundAmount}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.total}}</text>
+                            </rich-text>
+                            <rich-text>
+                              {{details.rebatesRate}}：{{item.shopRate}}， {{item.inputState==0?details.consumeRebate:details.refundRebate}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.shopMoney}}</text>
+                            </rich-text>
+                            <rich-text>
+                              {{details.credentials}}：{{item.recordCode}}
+                            </rich-text>
+                          </view> 
+                            <image data-url='{{item.recordCodeImg}}' catchtap='checkImg' class='unit-detail-img fr'  src='{{item.recordCodeImg}}'></image>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                  <view class='content-conclusion'>
+                    <rich-text>{{details.consumeAll}}：<text class="consume">₩{{recordData.all.sumTotalAll}}</text></rich-text>
+                    <rich-text>{{details.refundAll}}：<text class="refund">₩{{recordData.all.sumReturnTotalAll}}</text></rich-text>
+                    <rich-text>{{details.rebatesAll}}：<text class="consume">₩{{recordData.all.sumShopMoneyAll}}</text></rich-text>
+                  </view>
                   <!-- 当内容List 不为空时隐藏 -->
-                  <view hidden="{{activeIndex != 1}}"> 您还没有相关记录哦</view>
+                  <view hidden="{{recordData.all.listAll != ''}}"> {{details.noRecord}}</view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                <!-- ---------------------------未返利------------------------------ -->
+                  <view class='content-list'>
+                    <view wx:for="{{recordData.unPay.listUnPay}}" wx:key="recordId">
+                      <view class="unit {{item.payState==1?'gray':''}}">
+                        <view class='unit-title clearfix'>
+                          <view class='unit-title-name fl'>{{item.userName}}</view>
+                          <view class='unit-title-time fr'>{{item.recordTime}}</view>
+                        </view>
+                        <view class='unit-detail clearfix'>
+                          <view class='unit-detail-mes fl'>
+                            <rich-text>
+                              {{item.inputState==0?details.consumeAmount:details.refundAmount}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.total}}</text>
+                            </rich-text>
+                            <rich-text>
+                              {{details.rebatesRate}}：{{item.shopRate}}， {{item.inputState==0?details.consumeRebate:details.refundRebate}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.shopMoney}}</text>
+                            </rich-text>
+                            <rich-text>
+                              {{details.credentials}}：{{item.recordCode}}
+                            </rich-text>
+                          </view> 
+                            <image data-url='{{item.recordCodeImg}}' catchtap='checkImg' class='unit-detail-img fr'  src='{{item.recordCodeImg}}'></image>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                  <view class='content-conclusion'>
+                    <rich-text>{{details.consumeAll}}：<text class="consume">₩{{recordData.unPay.sumTotalUnPay}}</text></rich-text>
+                    <rich-text>{{details.refundAll}}：<text class="refund">₩{{recordData.unPay.sumReturnTotalUnPay}}</text></rich-text>
+                    <rich-text>{{details.rebatesAll}}：<text class="consume">₩{{recordData.unPay.sumShopMoneyUnPay}}</text></rich-text>
+                  </view>
+                  <!-- 当内容List 不为空时隐藏 -->
+                  <view hidden="{{recordData.unPay.listAll != ''}}"> 您还没有相关记录哦</view>
                 </view>
                 <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                <!-- ---------------------------已返利------------------------------ -->
+                  <view class='content-list'>
+                    <view wx:for="{{recordData.pay.listPay}}" wx:key="recordId">
+                      <view class="unit {{item.payState==1?'gray':''}}">
+                        <view class='unit-title clearfix'>
+                          <view class='unit-title-name fl'>{{item.userName}}</view>
+                          <view class='unit-title-time fr'>{{item.recordTime}}</view>
+                        </view>
+                        <view class='unit-detail clearfix'>
+                          <view class='unit-detail-mes fl'>
+                            <rich-text>
+                              {{item.inputState==0?details.consumeAmount:details.refundAmount}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.total}}</text>
+                            </rich-text>
+                            <rich-text>
+                              {{details.rebatesRate}}：{{item.shopRate}}， {{item.inputState==0?details.consumeRebate:details.refundRebate}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.shopMoney}}</text>
+                            </rich-text>
+                            <rich-text>
+                              {{details.credentials}}：{{item.recordCode}}
+                            </rich-text>
+                          </view> 
+                            <image data-url='{{item.recordCodeImg}}' catchtap='checkImg' class='unit-detail-img fr'  src='{{item.recordCodeImg}}'></image>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                  <view class='content-conclusion'>
+                    <rich-text>{{details.consumeAll}}：<text class="consume">₩{{recordData.pay.sumTotalPay}}</text></rich-text>
+                    <rich-text>{{details.refundAll}}：<text class="refund">₩{{recordData.pay.sumReturnTotalPay}}</text></rich-text>
+                    <rich-text>{{details.rebatesAll}}：<text class="consume">₩{{recordData.pay.sumShopMoneyPay}}</text></rich-text>
+                  </view>
                   <!-- 当内容List 不为空时隐藏 -->
-                  <view hidden="{{activeIndex != 0}}"> 您还没有相关记录哦</view>
-                  选项三的内容
+                  <view hidden="{{recordData.Pay.listPay != ''}}"> 您还没有相关记录哦</view>
                 </view>
             </view>
         </view>

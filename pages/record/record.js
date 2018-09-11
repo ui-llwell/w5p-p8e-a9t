@@ -1,6 +1,8 @@
 // pages/record/record.js
 import event from '../../utils/event'
 import T from '../../utils/i18n'
+
+const app = getApp()
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 Page({
   data: {
@@ -8,22 +10,25 @@ Page({
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
-    scanninga:'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png',
-    scanningb: '',
-    scanningc: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png',
+    // scanninga:'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png',
+    scanningConsume: '',
+    // scanningc: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png',
     scanningd: '',
     atempFilePaths: '',
     ainput_money: '',
     ainput_text: '',
+
     btempFilePaths: '',
     binput_money: '',
     binput_text: '',
+
+    userId:'',
+    
   },
   onShow() {
     this.setLanguages();
   },
   onLoad: function () {
-     
     var that = this;
     wx.getSystemInfo({
       success: function (res) {
@@ -90,26 +95,96 @@ Page({
     })
   },
 
-  // 添加消费记录清空
-  empty: function(){
-    this.setData({ 
-      ainput_money: '',
-      ainput_text: '',
-      atempFilePaths: '',
-      scanningb: ''
-      })
-  },
-  
   //添加消费记录扫描二维码 成功或失败
   toSweepOrder: function () {
     wx.scanCode({
       success: (res) => {
-        this.setData({
-          scanningb: wx.T.getLanguage().record.scanImgUrlConsumerSuccess
-        })
+        console.log('@@@@', res)
+        var that = this;
+        app.Ajax(
+          'Shop',
+          'POST',
+          'ScanCode',
+          // { code: '123456' },
+          { code: res.result },
+          function (json) {
+            console.log('json',json);
+            if (json.success) {
+              that.setData({
+                scanningConsume: wx.T.getLanguage().record.scanImgUrlConsumerSuccess,
+                userId: json.data.userId
+              })
+            } else {
+              wx.showToast({
+                title: '扫描失败',
+                icon:'loading',
+              })
+            }
+
+          }
+        );
       },
       fail: (res) => {
         console.log(res);
+      }
+    })
+  },
+
+  // 添加消费记录清空
+  empty: function () {
+    this.setData({
+      ainput_money: '',
+      ainput_text: '',
+      atempFilePaths: '',
+      scanningConsume: ''
+    })
+  },
+  bindinputMoney:function(e){
+    this.setData({
+      ainput_money: e.detail.value
+    })
+  },
+  bindinputCredentials:function(e){
+    this.setData({
+      ainput_text: e.detail.value
+    })
+  },
+  ensure:function(e){
+    // this.testUpload();
+    console.log('%%',e.target)
+    var that = this;
+    app.Ajax(
+      'Shop',
+      'POST',
+      'Submit',
+      { 
+        userId: this.data.userId,
+        shopId:wx.getStorageSync('shopId'),
+        total: this.data.ainput_money,
+        ticketCode: this.data.ainput_text,
+        ticketImg:'',
+        inputState:'0'
+       },
+      function (json) {
+        // console.log(json);
+        if (json.success) {
+
+
+        } else {
+          console.log('')
+        }
+
+      }
+    );
+  },
+  testUpload: function () {
+    // console.log(this.data.atempFilePaths)
+    wx.uploadFile({
+      url: 'https://wxapp.llwell.net/api/PG/Upload',
+      filePath: this.data.atempFilePaths,
+      name: 'file',
+      success: function (res) {
+        console.log(res)
       }
     })
   },
