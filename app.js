@@ -9,7 +9,7 @@ wx.T = T
 
 App({
   onLaunch: function () {
-    var isDebug = true;//调试状态使用本地服务器，非调试状态使用远程服务器
+    var isDebug = false;//调试状态使用本地服务器，非调试状态使用远程服务器
     if (!isDebug) {
       //远程域名
       wx.setStorageSync('domainName', "https://wxapp.llwell.net/api/PG/")
