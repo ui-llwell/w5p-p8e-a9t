@@ -4,7 +4,7 @@
     <view class='h2'>流连代购助手店铺注册协议</view>
       <text class='content'>{{index.agreement}}</text>
     <view class='service'>
-    <image src='/static/img/article_icon_service@3x.png'></image>
+    <image src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/article_icon_service@3x.png'></image>
     <contact-button class='service_click' size="120" session-from="weapp" type="default-dark" style='opacity:0'></contact-button></view>
     <button  class='but' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">我要注册成为流连合作商铺</button>
     
