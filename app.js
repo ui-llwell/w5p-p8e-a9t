@@ -33,7 +33,17 @@ App({
             console.log('~~~',json);
             if (json.success) {
               wx.setStorageSync('token', json.data.token);
-              console.log(json.data.token);
+              // console.log(json.data.token);
+              if (json.data.isReg!=''){
+                wx.switchTab({
+                  url: '../record/record',
+                })
+              }else{
+                wx.navigateTo({
+                  url: '../index/index'
+                })
+              }
+
             } else {
 
               console.log(json.msg.code);
