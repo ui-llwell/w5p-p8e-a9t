@@ -41,10 +41,11 @@ box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
   margin: auto;
   width: 580rpx;
   height: 830rpx;
-  background:#fff;
   /* display: block;
   margin: 0 auto; */
   overflow: hidden;
+  background: #FFFFFF;
+box-shadow: 0 10px 20px 0 rgba(0,0,0,0.20);
 }
 .warp_h1 {
   font-size: 32rpx;
