@@ -12,7 +12,8 @@ export default {
     "record": {
       "navigationBarTitle": "店铺记录",
       "tabs": ["添加消费记录", "添加退费记录"],
-      "costMoney": "消费金额",
+      "consumeMoney": "消费金额",
+      "refundMoney": "退费金额",
       "addConsumerCredentials": "添加消费凭证",
       "addRefundCredentials": "添加退费凭证",
       "scanImgUrlConsumerBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png",
@@ -62,7 +63,8 @@ export default {
     "record": {
       "navigationBarTitle": "ShopRecord",
       "tabs": ["addConsumerRecord", "addRefundRecord"],
-      "costMoney": "costMoney",
+      "consumeMoney": "consumeMoney",
+      "refundMoney": "refundMoney",
       "addConsumerCredentials": "addConsumerCredentials",
       "addRefundCredentials": "addRefundCredentials",
       

@@ -16,7 +16,7 @@
                 <!-- 以下内容添加消费记录 -->
                   <view class='warp'>
                     <view class='warp_h1'>
-                      {{record.costMoney}}：
+                      {{record.consumeMoney}}：
                     </view>
                     <view class='warp_h2'>
                       <view class='warp_h2_img'>₩</view>
@@ -49,15 +49,15 @@
                   <!-- 添加退费记录 -->
                   <view class='warp'>
                     <view class='warp_h1'>
-                      {{record.costMoney}}：
+                      {{record.refundMoney}}：
                     </view>
                     <view class='warp_h2'>
                       <view class='warp_h2_img'>₩-</view>
-                      <input type='text' class='warp_h2_text' value='{{binput_money}}'></input>
+                      <input type='text' class='warp_h2_text' value='{{binput_money}}' bindinput='bindinputMoneyRefund'></input>
                     </view>
                     <view class='warp_h3'>
                       <view class='warp_h3_left'>
-                        <input type='text' class='h3_input'  placeholder='{{record.addRefundCredentials}}' value='{{binput_text}}'></input>
+                        <input type='text' class='h3_input'  placeholder='{{record.addRefundCredentials}}' value='{{binput_text}}' bindinput='bindinputCredentialsRefund'></input>
                       </view>
                       <!-- 退费记录-- 点击选择相册或相机事件 -->
                       <view class='warp_h3_right' bindtap="chooseimageb">
@@ -68,12 +68,12 @@
                     <!-- 退费记录-- 扫描二维码事件 -->
                     <view class='warp_h4' bindtap="toSweepOrderb">
                       <image src='{{record.scanImgUrlRefundBefore}}'></image>
-                      <image class='warp_h4_img' src='{{scanningd}}'></image>
+                      <image class='warp_h4_img' src='{{scanningRefund}}'></image>
                     </view>
                     <!-- 退费记录-- 清空数据事件 -->
                     <view class='warp_h5'>
-                      <span class='warp_h5_no' bindtap='emptyb' style='color:#5A8BDA'>{{record.empty}}</span>
-                      <span class='warp_h5_ok' style='color:#5A8BDA'>{{record.ensure}}</span>
+                      <span class='warp_h5_no' bindtap='emptyRefund' style='color:#5A8BDA'>{{record.empty}}</span>
+                      <span class='warp_h5_ok' bindtap='ensureRefund' style='color:#5A8BDA'>{{record.ensure}}</span>
                     </view>    
                   </view>
 

@@ -10,10 +10,8 @@ Page({
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
-    // scanninga:'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png',
     scanningConsume: '',
-    // scanningc: 'http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png',
-    scanningd: '',
+    scanningRefund: '',
     atempFilePaths: '',
     ainput_money: '',
     ainput_text: '',
@@ -23,7 +21,6 @@ Page({
     binput_text: '',
 
     userId:'',
-    
   },
   onShow() {
     this.setLanguages();
@@ -99,7 +96,6 @@ Page({
   toSweepOrder: function () {
     wx.scanCode({
       success: (res) => {
-        console.log('@@@@', res)
         var that = this;
         app.Ajax(
           'Shop',
@@ -108,7 +104,7 @@ Page({
           // { code: '123456' },
           { code: res.result },
           function (json) {
-            console.log('json',json);
+            // console.log('json',json);
             if (json.success) {
               that.setData({
                 scanningConsume: wx.T.getLanguage().record.scanImgUrlConsumerSuccess,
@@ -151,7 +147,7 @@ Page({
   },
   ensure:function(e){
     // this.testUpload();
-    console.log('%%',e.target)
+    // console.log('%%',e.target)
     var that = this;
     app.Ajax(
       'Shop',
@@ -168,8 +164,7 @@ Page({
       function (json) {
         // console.log(json);
         if (json.success) {
-
-
+          that.empty();
         } else {
           console.log('')
         }
@@ -226,17 +221,9 @@ Page({
   },
   
  //**************** 
-//  一下是添加退费记录.js
+//  以下是添加退费记录.js
 //*****************
-//添加退费记录清空数据
-emptyb: function () {
-    this.setData({
-      binput_money: '',
-      binput_text: '',
-      btempFilePaths: '',
-      scanningd: ''
-    })
-  },
+
 
   //  添加退费记录点击拍照或选择相册图片
   chooseimageb: function () {
@@ -275,12 +262,89 @@ emptyb: function () {
   toSweepOrderb: function () {
     wx.scanCode({
       success: (res) => {
-        this.setData({
-          scanningd: wx.T.getLanguage().record.scanImgUrlRefundSuccess,
-        })
+        var that = this;
+        app.Ajax(
+          'Shop',
+          'POST',
+          'ScanCode',
+          // { code: '123456' },
+          { code: res.result },
+          function (json) {
+            // console.log('json', json);
+            if (json.success) {
+              that.setData({
+                scanningRefund: wx.T.getLanguage().record.scanImgUrlRefundSuccess,
+                userId: json.data.userId
+              })
+            } else {
+              wx.showToast({
+                title: '扫描失败',
+                icon: 'loading',
+              })
+            }
+
+          }
+        );
       },
       fail: (res) => {
         console.log(res);
+      }
+    })
+  },
+  //添加退费记录清空数据
+  emptyRefund: function () {
+    this.setData({
+      binput_money: '',
+      binput_text: '',
+      btempFilePaths: '',
+      scanningRefund: ''
+    })
+  },
+  bindinputMoneyRefund: function (e) {
+    this.setData({
+      binput_money: e.detail.value
+    })
+  },
+  bindinputCredentialsRefund: function (e) {
+    this.setData({
+      binput_text: e.detail.value
+    })
+  },
+  ensureRefund: function (e) {
+    // this.testUpload();
+    var that = this;
+    app.Ajax(
+      'Shop',
+      'POST',
+      'Submit',
+      {
+        userId: this.data.userId,
+        shopId: wx.getStorageSync('shopId'),
+        total: this.data.binput_money,
+        ticketCode: this.data.binput_text,
+        ticketImg: '',
+        inputState: '1'
+      },
+      function (json) {
+        // console.log(json);
+        if (json.success) {
+          that.emptyRefund();
+
+        } else {
+          console.log('')
+        }
+
+      }
+    );
+  },
+  testUpload: function () {
+    // console.log(this.data.atempFilePaths)
+    wx.uploadFile({
+      url: 'https://wxapp.llwell.net/api/PG/Upload',
+      filePath: this.data.btempFilePaths,
+      name: 'file',
+      success: function (res) {
+        console.log(res)
       }
     })
   },
