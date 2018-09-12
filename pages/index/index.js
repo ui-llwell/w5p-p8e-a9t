@@ -25,7 +25,7 @@ Page({
       langIndex: wx.getStorageSync('langIndex') || 0
     });
     this.setLanguage();
-
+    console.log(options);
     this.setData({
       shop: options.shop
     })
@@ -53,10 +53,19 @@ Page({
       function (json) {
         // console.log(json);
         if (json.success) {
-          
+          wx.showToast({
+            title: '注册成功',
+          })
+          wx.switchTab({
+            url: '../record/record',
+          })
 
         } else {
-          console.log('')
+          wx.showToast({
+            title: '注册失败',
+            icon: 'loading',
+          })
+          console.log('ssssssss')
         }
 
       }
@@ -65,8 +74,6 @@ Page({
     // wx.navigateBack({
     //   delta: 1
     // })
-    wx.switchTab({
-      url: '../record/record',
-    })
+    
   }
 })

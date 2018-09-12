@@ -41,8 +41,8 @@
 				{
 					"id": 0,
 					"name": "WithShop",
-					"pathName": "pages/record/record",
-					"query": "shop=123"
+					"pathName": "pages/index/index",
+					"query": "shop=123456"
 				}
 			]
 		}

@@ -148,6 +148,10 @@ Page({
   ensure:function(e){
     // this.testUpload();
     // console.log('%%',e.target)
+
+    if (this.data.ainput_money != '' && this.data.userId){
+
+    
     var that = this;
     app.Ajax(
       'Shop',
@@ -164,13 +168,28 @@ Page({
       function (json) {
         // console.log(json);
         if (json.success) {
+          wx.showToast({
+            title: '添加成功',
+          })
           that.empty();
         } else {
+          wx.showToast({
+            title: '添加失败',
+            icon: 'loading',
+          })
           console.log('')
         }
 
       }
     );
+
+
+    } else {
+      wx.showToast({
+        title: '请确认消费金额，并扫描消费二维码',
+        icon: 'none',
+      })
+    }
   },
   testUpload: function () {
     // console.log(this.data.atempFilePaths)
@@ -279,7 +298,7 @@ Page({
             } else {
               wx.showToast({
                 title: '扫描失败',
-                icon: 'loading',
+                icon:'loading',
               })
             }
 
@@ -312,6 +331,9 @@ Page({
   },
   ensureRefund: function (e) {
     // this.testUpload();
+
+    if (this.data.binput_money != '' && this.data.userId != ''){
+
     var that = this;
     app.Ajax(
       'Shop',
@@ -328,14 +350,30 @@ Page({
       function (json) {
         // console.log(json);
         if (json.success) {
+          wx.showToast({
+            title: '添加成功',
+          })
           that.emptyRefund();
 
         } else {
+          wx.showToast({
+            title: '添加失败，请重新扫描',
+            icon:'none',
+          })
           console.log('')
         }
 
       }
     );
+
+
+
+    } else {
+      wx.showToast({
+        title: '请确认退费金额，并扫描消费二维码',
+        icon: 'none',
+      })
+    }
   },
   testUpload: function () {
     // console.log(this.data.atempFilePaths)

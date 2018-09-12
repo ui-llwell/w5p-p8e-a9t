@@ -8,7 +8,7 @@ T.setLocaleByIndex(wx.getStorageSync('langIndex') || 0);
 wx.T = T
 
 App({
-  onLaunch: function () {
+  onLaunch: function (options) {
     var isDebug = false;//true调试状态使用本地服务器，非调试状态使用远程服务器
     if (!isDebug) {
       //远程域名
@@ -30,22 +30,30 @@ App({
           'Login',
           { code: res.code },
           function (json) {
-            console.log('~~~',json);
+            // console.log('~~~',json);
             if (json.success) {
+              
               wx.setStorageSync('token', json.data.token);
               // console.log(json.data.token);
-              if (json.data.isReg!=''){
+              if (json.data.isReg){
                 wx.switchTab({
                   url: '../record/record',
                 })
               }else{
-                wx.navigateTo({
-                  url: '../index/index'
-                })
+                // console.log(options);
+                if (options.query.shop === undefined){
+                  wx.navigateTo({
+                    url: '../index/index'
+                  })
+                }
+                
               }
 
             } else {
-
+              wx.showToast({
+                title: '登录失败',
+                icon: 'none',
+              })
               console.log(json.msg.code);
               console.log(json.msg.msg);
             }
