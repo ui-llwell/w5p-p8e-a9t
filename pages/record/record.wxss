@@ -3,8 +3,8 @@
 position:relative;
 width:750rpx;
 height:100%;
-background: url('http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/bg@3x.jpg') no-repeat left top;
-background-size: cover;
+background: url('http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/bg@3x.jpg') no-repeat 0 0;
+background-size: 100% 100%;
 display: block;
 }
 page,
@@ -16,8 +16,10 @@ page,
     padding-bottom: 0;
 }
 .content .weui-tab__content{
-    padding-top: 60px;
+    /* padding-top: 60px; */
+    height: 100%;
     text-align: center;
+    position: relative;
 }
 .content .weui-navbar__item.weui-bar__item_on {
   color: #ED4C4C;
@@ -25,15 +27,23 @@ page,
 .content .weui-navbar__slider {
   background: #ED4C4C;
 }
-.content .weui-tab__content {
-  padding-top: 52rpx;
+.weui-navbar{
+  background: #F5F5F5;
+box-shadow: 0 0 4px 0 rgba(0,0,0,0.12), 0 4px 4px 0 rgba(0,0,0,0.24);
 }
+
 .content .warp {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 580rpx;
   height: 830rpx;
   background:#fff;
-  display: block;
-  margin: 0 auto;
+  /* display: block;
+  margin: 0 auto; */
   overflow: hidden;
 }
 .warp_h1 {
@@ -53,7 +63,7 @@ page,
   height: 62rpx;
   position: absolute;
   left: 45rpx;
-  top: 0rpx;
+  top: 8rpx;
   font-size: 60rpx;
 }
 .warp_h2_img image {
@@ -183,7 +193,7 @@ page,
 }
 .text_center {
   width: 416rpx;
-  height: 690rpx;
+  /* height: 690rpx; */
 }
 .drawer_image {
   display: block;

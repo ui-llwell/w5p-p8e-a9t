@@ -2,7 +2,7 @@
 <!-- 选项卡特效 -->
 <view class="weui-tab">
             <view class="weui-navbar">
-                <block wx:for="{{tabs}}" wx:key="*this">
+                <block wx:for="{{record.tabs}}" wx:key="*this">
                     <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
                         <view class="weui-navbar__title">{{item}}</view>
                     </view>
@@ -10,19 +10,21 @@
                 <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
             </view>
             <view class="weui-tab__panel">
-            <!-- 以下内容添加消费记录 -->
+            <!-- ------------------------------------------ first tab---------------------------------------------------- -->
+            
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                <!-- 以下内容添加消费记录 -->
                   <view class='warp'>
                     <view class='warp_h1'>
-                      消费金额：
+                      {{record.consumeMoney}}：
                     </view>
                     <view class='warp_h2'>
                       <view class='warp_h2_img'>₩</view>
-                      <input type='text' class='warp_h2_text' value='{{ainput_money}}'></input>
+                      <input type='text' class='warp_h2_text' value='{{ainput_money}}' bindinput='bindinputMoney'></input>
                     </view>
                     <view class='warp_h3'>
                       <view class='warp_h3_left'>
-                        <input type='text' class='h3_input'  placeholder='添加消费凭证' value='{{ainput_text}}'></input>
+                        <input type='text' class='h3_input'  placeholder='{{record.addConsumerCredentials}}' value='{{ainput_text}}'  bindinput='bindinputCredentials'></input>
                       </view>
                       <!-- 消费记录--点击相机选择照片或拍照事件 -->
                       <view class='warp_h3_right' bindtap="chooseimage">
@@ -32,29 +34,30 @@
                     </view>
                     <!-- 消费记录--扫描二维码事件 -->
                     <view class='warp_h4' bindtap="toSweepOrder">
-                      <image src='{{scanninga}}'></image>
-                      <image class='warp_h4_img' src='{{scanningb}}'></image>
+                      <image src='{{record.scanImgUrlConsumerBefore}}'></image>
+                      <image class='warp_h4_img' src='{{scanningConsume}}'></image>
                     </view>
-                    <!-- 消费记录--清空事件 -->
+                    <!-- 消费记录--清空及确定事件 -->
                     <view class='warp_h5'>
-                      <span class='warp_h5_no' bindtap='empty'>清空</span>
-                      <span class='warp_h5_ok'>确定</span>
+                      <span class='warp_h5_no' bindtap='empty'>{{record.empty}}</span>
+                      <span class='warp_h5_ok' bindtap='ensure'>{{record.ensure}}</span>
                     </view>    
                   </view>
                 </view>
+                <!-- ------------------------------------------ another tab---------------------------------------------------- -->
                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                   <!-- 添加退费记录 -->
                   <view class='warp'>
                     <view class='warp_h1'>
-                      消费金额：
+                      {{record.refundMoney}}：
                     </view>
                     <view class='warp_h2'>
-                      <view class='warp_h2_img'>₩</view>
-                      <input type='text' class='warp_h2_text' value='{{binput_money}}'></input>
+                      <view class='warp_h2_img'>₩-</view>
+                      <input type='text' class='warp_h2_text' value='{{binput_money}}' bindinput='bindinputMoneyRefund'></input>
                     </view>
                     <view class='warp_h3'>
                       <view class='warp_h3_left'>
-                        <input type='text' class='h3_input'  placeholder='添加消费凭证' value='{{binput_text}}'></input>
+                        <input type='text' class='h3_input'  placeholder='{{record.addRefundCredentials}}' value='{{binput_text}}' bindinput='bindinputCredentialsRefund'></input>
                       </view>
                       <!-- 退费记录-- 点击选择相册或相机事件 -->
                       <view class='warp_h3_right' bindtap="chooseimageb">
@@ -64,13 +67,13 @@
                     </view>
                     <!-- 退费记录-- 扫描二维码事件 -->
                     <view class='warp_h4' bindtap="toSweepOrderb">
-                      <image src='{{scanningc}}'></image>
-                      <image class='warp_h4_img' src='{{scanningd}}'></image>
+                      <image src='{{record.scanImgUrlRefundBefore}}'></image>
+                      <image class='warp_h4_img' src='{{scanningRefund}}'></image>
                     </view>
                     <!-- 退费记录-- 清空数据事件 -->
                     <view class='warp_h5'>
-                      <span class='warp_h5_no' bindtap='emptyb' style='color:#5A8BDA'>清空</span>
-                      <span class='warp_h5_ok' style='color:#5A8BDA'>确定</span>
+                      <span class='warp_h5_no' bindtap='emptyRefund' style='color:#5A8BDA'>{{record.empty}}</span>
+                      <span class='warp_h5_ok' bindtap='ensureRefund' style='color:#5A8BDA'>{{record.ensure}}</span>
                     </view>    
                   </view>
 

@@ -2,6 +2,8 @@
 import T from '../../utils/i18n'
 var util = require('../../utils/util.js')
 import event from '../../utils/event'
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
@@ -11,6 +13,7 @@ Page({
     shop: {},
     languages: ['zh', 'ko'],
     langIndex: 0,
+    shopName:'',
   },
   /**
    * 生命周期函数--监听页面加载
@@ -20,9 +23,11 @@ Page({
       langIndex: wx.getStorageSync('langIndex') || 0
     });
     // this.setLanguage();
+
+    this.getShop();
   },
+  
   setLanguage() {
-    console.log('shop')
     this.setData({
       shop: wx.T.getLanguage().shop
     });
@@ -38,6 +43,28 @@ Page({
       text: wx.T.getLanguage().tabbar.itemText2
     })
   },
+  getShop: function () {
+    var that = this;
+    app.Ajax(
+      'Shop',
+      'POST',
+      'GetShop',
+      { lang: wx.getStorageInfoSync('langCode') },
+      function (json) {
+        console.log('json', json);
+        if (json.success) {
+          wx.setStorageSync('shopId', json.data.shopId)
+          that.setData({
+            shopName: json.data.shopName
+          });
+
+        } else {
+          console.log('')
+        }
+
+      }
+    );
+  },
   changeLanguage: function () {
     console.log('sdsds')
     const curLangIndex = this.data.langIndex == 0 ? 1 : 0
@@ -48,6 +75,7 @@ Page({
     wx.T.setLocaleByIndex(curLangIndex);
     this.setLanguage();
     event.emit('languageChanged');
+    this.getShop();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

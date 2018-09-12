@@ -3,7 +3,8 @@
 import event from '../../utils/event'
 import T from '../../utils/i18n'
 var sliderWidth = 40; // 需要设置slider的宽度，用于计算中间位置
-
+//获取应用实例
+const app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -15,7 +16,12 @@ Page({
     sliderOffset: 0,
     sliderLeft: 0,
     show: false,
-
+    showImg:'',
+    recordData:{
+      all: {},
+      unPay:{},
+      pay:{}
+    },
 
     allList:[
       //  0未返利1已返利 0消费1退费
@@ -34,7 +40,7 @@ Page({
    */
   onLoad: function () {
     this.setLanguages();
-
+    this.getRecord();
     var that = this;
     wx.getSystemInfo({
       success: function (res) {
@@ -54,6 +60,27 @@ Page({
       title: wx.T.getLanguage().details.navigationBarTitle
     });
   },
+  getRecord:function(){
+    var that = this;
+    app.Ajax(
+      'Shop',
+      'POST',
+      'GetRecord',
+      { shopId: wx.getStorageSync('shopId') },
+      function (json) {
+        // console.log('json', json);
+        if (json.success) {
+          that.setData({
+            recordData: json.data
+          });
+
+        } else {
+          console.log('')
+        }
+
+      }
+    );
+  },
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
@@ -67,8 +94,12 @@ Page({
     });
   },
   //  点击查看图片
-  checkImg:function(){
-    this.setData({ show: true });
+  checkImg: function (e){
+    // console.log('~~~~', e.target.dataset)
+    this.setData({
+      show: true,
+      showImg: e.target.dataset.url
+    });
   },
   onClose() {
     this.setData({ show: false });

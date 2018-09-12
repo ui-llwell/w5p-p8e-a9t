@@ -12,13 +12,14 @@ export default {
     "record": {
       "navigationBarTitle": "店铺记录",
       "tabs": ["添加消费记录", "添加退费记录"],
-      "costMoney": "消费金额",
+      "consumeMoney": "消费金额",
+      "refundMoney": "退费金额",
       "addConsumerCredentials": "添加消费凭证",
       "addRefundCredentials": "添加退费凭证",
       "scanImgUrlConsumerBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png",
-      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_selected@3x.png",
+      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_selected@3x.png",
       
-      "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png",
+      "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png",
       "scanImgUrlRefundSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_selected@3x.png",
       "empty": "清空",
       "ensure": "确定",
@@ -62,14 +63,15 @@ export default {
     "record": {
       "navigationBarTitle": "ShopRecord",
       "tabs": ["addConsumerRecord", "addRefundRecord"],
-      "costMoney": "costMoney",
+      "consumeMoney": "consumeMoney",
+      "refundMoney": "refundMoney",
       "addConsumerCredentials": "addConsumerCredentials",
       "addRefundCredentials": "addRefundCredentials",
       
       "scanImgUrlConsumerBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png",
-      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_selected@3x.png",
+      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_selected@3x.png",
 
-      "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png",
+      "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png",
       "scanImgUrlRefundSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_selected@3x.png",
       "empty": "empty",
       "ensure": "ensure",
