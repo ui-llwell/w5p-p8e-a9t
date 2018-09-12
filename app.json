@@ -21,14 +21,14 @@
   "borderStyle": "#FAFAFC",
   "list": [
     {
-      "selectedIconPath": "static/img/a1.png",
-      "iconPath": "static/img/a2.png",
+      "selectedIconPath": "static/img/top_bar_icon_addition_normal@3x.png",
+      "iconPath": "static/img/shop_bar_icon_addition_normal@3x.png",
       "pagePath": "pages/record/record",
       "text": "添加记录"
     },
     {
-      "selectedIconPath": "static/img/b1.png",
-      "iconPath": "static/img/b2.png",
+      "selectedIconPath": "static/img/shop_bar_icon_shop_selected@3x.png",
+      "iconPath": "static/img/top_bar_icon_shop_default@3x.png",
       "pagePath": "pages/shop/shop",
       "text": "店铺"
     }
