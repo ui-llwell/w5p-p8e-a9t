@@ -21,6 +21,16 @@ page{
   right: 0;
   margin: auto;
 }
+.center{
+  padding: 25rpx;
+  height: 1070rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
 .h2 {
   font-size: 36rpx;
   text-align: center;

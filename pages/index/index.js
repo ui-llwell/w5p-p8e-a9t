@@ -53,18 +53,33 @@ Page({
       function (json) {
         // console.log(json);
         if (json.success) {
-          wx.showToast({
-            title: '注册成功',
-          })
+          if (wx.getStorageSync('langIndex') == 1) {
+            wx.showToast({
+              title: '회원가입 되었습니다',
+            })
+          }else{
+            wx.showToast({
+              title: '注册成功',
+            })
+          }
+          
           wx.switchTab({
             url: '../record/record',
           })
 
         } else {
-          wx.showToast({
-            title: '注册失败',
-            icon: 'loading',
-          })
+          if (wx.getStorageSync('langIndex') == 1) {
+            wx.showToast({
+              title: '회원가입 실패 하였습니다',
+              icon: 'loading',
+            })
+          }else{
+            wx.showToast({
+              title: '注册失败',
+              icon: 'loading',
+            })
+          }
+          
           console.log('ssssssss')
         }
 

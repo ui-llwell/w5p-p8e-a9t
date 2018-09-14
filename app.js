@@ -4,7 +4,7 @@ import locales from './utils/locales'
 import T from './utils/i18n'
 
 T.registerLocale(locales);
-T.setLocaleByIndex(wx.getStorageSync('langIndex') || 0);
+T.setLocaleByIndex(wx.getStorageSync('langIndex') || 1);
 wx.T = T
 
 App({
@@ -42,7 +42,7 @@ App({
               }else{
                 // console.log(options);
                 if (options.query.shop === undefined){
-                  wx.navigateTo({
+                  wx.redirectTo({
                     url: '../index/index'
                   })
                 }
@@ -50,10 +50,18 @@ App({
               }
 
             } else {
-              wx.showToast({
-                title: '登录失败',
-                icon: 'none',
-              })
+              if (wx.getStorageSync('langIndex') == 1){
+                wx.showToast({
+                  title: '로그인 실패 하였습니다',
+                  icon: 'none',
+                })
+              }else{
+                wx.showToast({
+                  title: '登录失败',
+                  icon: 'none',
+                })
+              }
+              
               console.log(json.msg.code);
               console.log(json.msg.msg);
             }
@@ -65,7 +73,7 @@ App({
   },
   Ajax: function (url, type, method, data, callback) {
     wx.showLoading({
-      title: '加载中'
+      title: 'loading'
     });
     var send = {
       token: wx.getStorageSync('token'),

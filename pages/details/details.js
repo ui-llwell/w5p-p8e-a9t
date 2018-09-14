@@ -52,7 +52,7 @@ Page({
     });
   },
   setLanguages() {
-    console.log('record')
+    // console.log('record')
     this.setData({
       details: wx.T.getLanguage().details
     });

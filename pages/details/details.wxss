@@ -88,3 +88,9 @@ text-align: center;
   text-align: right;
   padding: 25rpx 15rpx;
 }
+.noRecord{
+  width: 100%;
+  position: absolute;
+  top: 48%;
+  text-align: center;
+}

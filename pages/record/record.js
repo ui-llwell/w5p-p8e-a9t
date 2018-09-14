@@ -111,10 +111,18 @@ Page({
                 userId: json.data.userId
               })
             } else {
-              wx.showToast({
-                title: '扫描失败',
-                icon: 'loading',
-              })
+              if (wx.getStorageSync('langIndex') == 1) {
+                wx.showToast({
+                  title: '스캔 실패 하였습니다',
+                  icon: 'loading',
+                })
+              }else{
+                wx.showToast({
+                  title: '扫描失败',
+                  icon: 'loading',
+                })
+              }
+              
             }
 
           }
@@ -168,15 +176,28 @@ Page({
         function (json) {
           // console.log(json);
           if (json.success) {
-            wx.showToast({
-              title: '添加成功',
-            })
+            if (wx.getStorageSync('langIndex') == 1){
+              wx.showToast({
+                title: '추가되었습니다',
+              })
+            }else{
+              wx.showToast({
+                title: '添加成功',
+              })
+            }
             that.empty();
           } else {
-            wx.showToast({
-              title: '添加失败',
-              icon: 'loading',
-            })
+            if (wx.getStorageSync('langIndex') == 1) {
+              wx.showToast({
+                title: '추가 실패 하였습니다， 다시 추가해 주세요',
+                icon: 'none',
+              })
+            }else{
+              wx.showToast({
+                title: '添加失败，请重新添加',
+                icon: 'none',
+              })
+            }
             console.log('')
           }
 
@@ -185,10 +206,18 @@ Page({
 
 
     } else {
-      wx.showToast({
-        title: '请确认消费金额，并扫描消费二维码',
-        icon: 'none',
-      })
+      if (wx.getStorageSync('langIndex') == 1) {
+        wx.showToast({
+          title: '소비금액을 확인해주시고 바코드를 스캔해주세요.',
+          icon: 'none',
+        })
+      }else{
+        wx.showToast({
+          title: '请确认消费金额，并扫描消费二维码',
+          icon: 'none',
+        })
+      }
+      
     }
   },
   testUpload: function () {
@@ -296,10 +325,18 @@ Page({
                 userId: json.data.userId
               })
             } else {
-              wx.showToast({
-                title: '扫描失败',
-                icon: 'loading',
-              })
+              if (wx.getStorageSync('langIndex') == 1) {
+                wx.showToast({
+                  title: '스캔 실패 하였습니다',
+                  icon: 'loading',
+                })
+              }else{
+                wx.showToast({
+                  title: '扫描失败',
+                  icon: 'loading',
+                })
+              }
+             
             }
 
           }
@@ -350,16 +387,30 @@ Page({
         function (json) {
           // console.log(json);
           if (json.success) {
-            wx.showToast({
-              title: '添加成功',
-            })
+            if (wx.getStorageSync('langIndex') == 1) {
+              wx.showToast({
+                title: '추가되었습니다',
+              })
+            }else{
+              wx.showToast({
+                title: '添加成功',
+              })
+            }
             that.emptyRefund();
 
           } else {
-            wx.showToast({
-              title: '添加失败，请重新扫描',
-              icon: 'none',
-            })
+            if (wx.getStorageSync('langIndex') == 1) {
+              wx.showToast({
+                title: '추가 실패 하였습니다,다시 추가해 주세요',
+                icon: 'none',
+              })
+            }else{
+              wx.showToast({
+                title: '添加失败，请重新添加',
+                icon: 'none',
+              })
+            }
+            
             console.log('')
           }
 
@@ -369,10 +420,18 @@ Page({
 
 
     } else {
-      wx.showToast({
-        title: '请确认退费金额，并扫描消费二维码',
-        icon: 'none',
-      })
+      if (wx.getStorageSync('langIndex') == 1) {
+        wx.showToast({
+          title: '환불금액을 확인해주시고 바코드를 스캔해주세요.',
+          icon: 'none',
+        })
+      }else{
+        wx.showToast({
+          title: '请确认退费金额，并扫描消费二维码',
+          icon: 'none',
+        })
+      }
+      
     }
   },
   testUpload: function () {
