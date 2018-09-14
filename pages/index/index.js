@@ -56,10 +56,12 @@ Page({
           if (wx.getStorageSync('langIndex') == 1) {
             wx.showToast({
               title: '회원가입 되었습니다',
+              duration: 1500
             })
           }else{
             wx.showToast({
               title: '注册成功',
+              duration: 1500
             })
           }
           
@@ -72,11 +74,13 @@ Page({
             wx.showToast({
               title: '회원가입 실패 하였습니다',
               icon: 'loading',
+              duration: 1500
             })
           }else{
             wx.showToast({
               title: '注册失败',
               icon: 'loading',
+              duration: 1500
             })
           }
           

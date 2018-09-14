@@ -211,3 +211,34 @@ box-shadow: 0 10px 20px 0 rgba(0,0,0,0.20);
   text-align: center;
 }
 
+.ensure {
+  font-size: 28rpx;
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(-45deg, #F77062 0%, #FE5196 100%);
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+border-radius: 2px;
+  margin: 0 auto;
+}
+.RefundEnsure{
+  background-image: linear-gradient(-45deg, #5A8ADA 0%, #91CCFC 100%);
+}
+/* button[disabled]{
+  
+  color:rgba(255, 255, 255, 0.6);
+  background-image: linear-gradient(-45deg, rgb(216, 174, 170) 0%, rgb(223, 165, 188) 100%);
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+border-radius: 2px;
+} */
+button[disabled]:not([type]) {
+color:rgba(255, 255, 255, 0.6);
+  background-image: linear-gradient(-45deg, rgb(224, 185, 200) 0%, rgb(223, 192, 189) 100%);
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+border-radius: 1px;
+}
+button[disabled].RefundEnsure:not([type]) {
+  background-image: linear-gradient(-45deg, #c7d4df 0%, #bbc6d8 100%);
+}

@@ -40,6 +40,7 @@
                     </view>
                   </view>
                   <view class='content-conclusion' hidden="{{recordData.all.listAll == ''}}">
+                    <rich-text>{{details.znum}}{{recordData.all.listAll.length}}{{details.item}}</rich-text>
                     <rich-text>{{details.consumeAll}}：<text class="consume">₩{{recordData.all.sumTotalAll}}</text></rich-text>
                     <rich-text>{{details.refundAll}}：<text class="refund">₩{{recordData.all.sumReturnTotalAll}}</text></rich-text>
                     <rich-text>{{details.rebatesAll}}：<text class="consume">₩{{recordData.all.sumShopMoneyAll}}</text></rich-text>
@@ -75,6 +76,7 @@
                     </view>
                   </view>
                   <view class='content-conclusion' hidden="{{recordData.unPay.listUnPay == ''}}">
+                    <rich-text>{{details.znum}}{{recordData.unPay.listUnPay.length}}{{details.item}}</rich-text>
                     <rich-text>{{details.consumeAll}}：<text class="consume">₩{{recordData.unPay.sumTotalUnPay}}</text></rich-text>
                     <rich-text>{{details.refundAll}}：<text class="refund">₩{{recordData.unPay.sumReturnTotalUnPay}}</text></rich-text>
                     <rich-text>{{details.rebatesAll}}：<text class="consume">₩{{recordData.unPay.sumShopMoneyUnPay}}</text></rich-text>
@@ -109,6 +111,7 @@
                     </view>
                   </view>
                   <view class='content-conclusion' hidden="{{recordData.pay.listPay == ''}}">
+                    <rich-text>{{details.znum}}{{recordData.pay.listPay.length}}{{details.item}}</rich-text>
                     <rich-text>{{details.consumeAll}}：<text class="consume">₩{{recordData.pay.sumTotalPay}}</text></rich-text>
                     <rich-text>{{details.refundAll}}：<text class="refund">₩{{recordData.pay.sumReturnTotalPay}}</text></rich-text>
                     <rich-text>{{details.rebatesAll}}：<text class="consume">₩{{recordData.pay.sumShopMoneyPay}}</text></rich-text>

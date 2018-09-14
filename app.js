@@ -54,11 +54,13 @@ App({
                 wx.showToast({
                   title: '로그인 실패 하였습니다',
                   icon: 'none',
+                  duration: 1500
                 })
               }else{
                 wx.showToast({
                   title: '登录失败',
                   icon: 'none',
+                  duration: 1500
                 })
               }
               

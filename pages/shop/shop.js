@@ -2,6 +2,9 @@
 import T from '../../utils/i18n'
 var util = require('../../utils/util.js')
 import event from '../../utils/event'
+var QRCode = require('../../utils/weapp-qrcode.js')
+
+var qrcode;
 //获取应用实例
 const app = getApp()
 Page({
@@ -14,6 +17,9 @@ Page({
     languages: ['zh', 'ko'],
     langIndex: 0,
     shopName:'',
+    shopRate:'',
+    shopCode:''
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -55,8 +61,21 @@ Page({
         if (json.success) {
           wx.setStorageSync('shopId', json.data.shopId)
           that.setData({
-            shopName: json.data.shopName
+            shopName: json.data.shopName,
+            shopRate: json.data.shopRate,
+            shopCode: json.data.shopCode
           });
+
+          qrcode = new QRCode('canvas', {
+            // usingIn: this,
+            text: that.data.shopCode,
+            width: 320,
+            height: 320,
+            colorDark: "#000",
+            colorLight: "white",
+            correctLevel: QRCode.CorrectLevel.H,
+          });
+
 
         } else {
           console.log('')

@@ -31,6 +31,7 @@ export default {
       "navigationBarTitle":"店铺",
       "checkRecord":"查看店铺记录",
       "lang":"한국어로 변경？",
+      "shopRate":"返点率"
     },
     "details": {
       "navigationBarTitle": "店铺记录",
@@ -44,7 +45,9 @@ export default {
       "consumeAll": "消费总金额",
       "refundAll": "退费总金额",
       "rebatesAll": "预计返利总金额",
-      "noRecord":'您还没有记录哦'
+      "noRecord":'您还没有记录哦',
+      "znum": "共",
+      "item": "条记录"
     },
     "test": {
       "navigationBarTitle": "我是测试",
@@ -85,6 +88,7 @@ export default {
       "navigationBarTitle": "가게",
       "checkRecord": "가게기록 검색",
       "lang": "切换成中文？",
+      "shopRate": "백 마진"
     },
 
     "details": {
@@ -92,14 +96,16 @@ export default {
       "tabs": ["전부", "수수료 미지불", "수수료 지불완료"],
       "consumeAmount": "소비금액",
       "refundAmount": "환불금액",
-      "rebatesRate": "수수료 율(%)",
+      "rebatesRate": "백 마진",
       "consumeRebate": "예상 소비 수수료",
       "refundRebate": "예상 환불 수수료",
       "credentials": "소비 영수증",
       "consumeAll": "소비 총금액",
       "refundAll": "환불 총금액",
       "rebatesAll": "예상 수수료 총금액",
-      "noRecord": '기록이 없습니다'
+      "noRecord": '기록이 없습니다',
+      "znum": "총",
+      "item": "개 기록"
     },
     "test": {
       "navigationBarTitle": "Test",

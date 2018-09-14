@@ -3,10 +3,12 @@
 <view class='shop'>
   <view class='center'>
     <view class='wrap'>
-      <image class='shopImg' src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/Shop_Photo@3x.png'>
-        </image>
+    <canvas class='shopImg' canvas-id='canvas' ></canvas>
+      <!-- <image class='shopImg' src='http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/Shop_Photo@3x.png'>
+        </image> -->
     </view>
     <text class='h2'>{{shopName}}</text>
+    <text class='h2'>{{shop.shopRate}} {{shopRate}}</text>
     <button class='btn' bindtap='goToDetails'>{{shop.checkRecord}}</button>
     <view class='lang' bindtap='changeLanguage'>{{shop.lang}}</view>
   </view>

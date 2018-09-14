@@ -1,23 +1,42 @@
 /* pages/shop/shop.wxss */
 page{
-  height: 100%;
+  
+  position:relative;
+width:750rpx;
+height:100%;
+background:url('http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/bg@3x.jpg') no-repeat 0 0;
+background-size:100% 100%;
+display:block;
+
 }
 .shop{
   height: 100%;
 }
 .center{
-  height: 960rpx;
+  /* height: 960rpx;
   position: absolute;
   top: -100rpx;
   right: 0;
   bottom: 0;
   left: 0;
-  margin: auto;
+  margin: auto; */
+  position:absolute;
+top:0;
+bottom:0;
+left:0;
+right:0;
+margin:auto;
+width:580rpx;
+height:900rpx;
+overflow:hidden;
+background:#FFFFFF;
+box-shadow:0 10px 20px 0 rgba(0,0,0,0.20);
+
 }
 .wrap{
-  width: 640rpx;
-  height: 640rpx;
-  margin: 40rpx auto;
+  width: 460rpx;
+  height: 460rpx;
+  margin: 60rpx;
 }
 .shopImg{
   width: 100%;
@@ -26,7 +45,7 @@ page{
 .h2{
   width: 100%;
   font-family: PingFangSC-Regular;
-  font-size: 18px;
+  font-size: 28rpx;
   color: #000000;
   letter-spacing: 0;
   text-align: center;
@@ -34,9 +53,9 @@ page{
 }
 .btn {
   font-size: 28rpx;
-  width: 680rpx;
-  height: 110rpx;
-  line-height: 110rpx;
+  width: 460rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   text-align: center;
   color: #fff;
   background-image: linear-gradient(-45deg, #F77062 0%, #FE5196 100%);
