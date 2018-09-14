@@ -28,11 +28,14 @@
                               {{item.inputState==0?details.consumeAmount:details.refundAmount}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.total}}</text>
                             </rich-text>
                             <rich-text>
-                              {{details.rebatesRate}}：{{item.shopRate}}， {{item.inputState==0?details.consumeRebate:details.refundRebate}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.shopMoney}}</text>
+                              {{details.rebatesRate}}：{{item.shopRate}}
                             </rich-text>
                             <rich-text>
-                              {{details.credentials}}：{{item.recordCode}}
+                              {{item.inputState==0?details.consumeRebate:details.refundRebate}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.shopMoney}}</text>
                             </rich-text>
+                            <!-- <rich-text>
+                              {{details.credentials}}：{{item.recordCode}}
+                            </rich-text> -->
                           </view> 
                             <!-- <image data-url='{{item.recordCodeImg}}' catchtap='checkImg' class='unit-detail-img fr'  src='{{item.recordCodeImg}}'></image> -->
                         </view>
@@ -64,11 +67,14 @@
                               {{item.inputState==0?details.consumeAmount:details.refundAmount}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.total}}</text>
                             </rich-text>
                             <rich-text>
-                              {{details.rebatesRate}}：{{item.shopRate}}， {{item.inputState==0?details.consumeRebate:details.refundRebate}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.shopMoney}}</text>
+                              {{details.rebatesRate}}：{{item.shopRate}}
                             </rich-text>
                             <rich-text>
-                              {{details.credentials}}：{{item.recordCode}}
+                              {{item.inputState==0?details.consumeRebate:details.refundRebate}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.shopMoney}}</text>
                             </rich-text>
+                            <!-- <rich-text>
+                              {{details.credentials}}：{{item.recordCode}}
+                            </rich-text> -->
                           </view> 
                             <image data-url='{{item.recordCodeImg}}' catchtap='checkImg' class='unit-detail-img fr'  src='{{item.recordCodeImg}}'></image>
                         </view>
@@ -99,11 +105,14 @@
                               {{item.inputState==0?details.consumeAmount:details.refundAmount}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.total}}</text>
                             </rich-text>
                             <rich-text>
-                              {{details.rebatesRate}}：{{item.shopRate}}， {{item.inputState==0?details.consumeRebate:details.refundRebate}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.shopMoney}}</text>
+                              {{details.rebatesRate}}：{{item.shopRate}}
                             </rich-text>
                             <rich-text>
-                              {{details.credentials}}：{{item.recordCode}}
+                             {{item.inputState==0?details.consumeRebate:details.refundRebate}}：<text class="{{item.inputState==0?'consume':'refund'}}">₩{{item.shopMoney}}</text>
                             </rich-text>
+                            <!-- <rich-text>
+                              {{details.credentials}}：{{item.recordCode}}
+                            </rich-text> -->
                           </view> 
                             <image data-url='{{item.recordCodeImg}}' catchtap='checkImg' class='unit-detail-img fr'  src='{{item.recordCodeImg}}'></image>
                         </view>
