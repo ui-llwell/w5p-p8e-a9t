@@ -59,7 +59,7 @@ export default {
     "language":'ko',
     "tabbar": {
       "itemText1": "기록추가",
-      "itemText2": '가게',
+      "itemText2": '샵',
     },
     "index":{
       "navigationBarTitle": "등록된 파트너 가게",
@@ -69,7 +69,7 @@ export default {
       "service": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/service@3x.png"
     },
     "record": {
-      "navigationBarTitle": "류렌 파트너 가게",
+      "navigationBarTitle": "류렌 파트너 샵",
       "tabs": ["소비기록 추가", "환불기록 추가"],
       "consumeMoney": "소비금액",
       "refundMoney": "환불금액",
@@ -85,24 +85,24 @@ export default {
       "ensure": "확인",
     },
     "shop": {
-      "navigationBarTitle": "가게",
-      "checkRecord": "가게기록 검색",
+      "navigationBarTitle": "샵",
+      "checkRecord": "소비기록 검색",
       "lang": "切换成中文？",
-      "shopRate": "백 마진"
+      "shopRate": "환불비율"
     },
 
     "details": {
-      "navigationBarTitle": "가게기록",
-      "tabs": ["전부", "수수료 미지불", "수수료 지불완료"],
+      "navigationBarTitle": "소비기록",
+      "tabs": ["전부", "환급 미지불", "환급 지불완료"],
       "consumeAmount": "소비금액",
       "refundAmount": "환불금액",
-      "rebatesRate": "백 마진",
-      "consumeRebate": "예상 소비 수수료",
-      "refundRebate": "예상 환불 수수료",
+      "rebatesRate": "환불비율",
+      "consumeRebate": "예상 소비 환급금액",
+      "refundRebate": "예상 환불 환급금액",
       "credentials": "소비 영수증",
       "consumeAll": "소비 총금액",
       "refundAll": "환불 총금액",
-      "rebatesAll": "예상 수수료 총금액",
+      "rebatesAll": "예상 환급 총금액",
       "noRecord": '기록이 없습니다',
       "znum": "총",
       "item": "개 기록"
