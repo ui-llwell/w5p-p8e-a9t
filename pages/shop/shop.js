@@ -69,8 +69,8 @@ Page({
           qrcode = new QRCode('canvas', {
             // usingIn: this,
             text: that.data.shopCode,
-            width: 320,
-            height: 320,
+            width: 230,
+            height: 230,
             colorDark: "#000",
             colorLight: "white",
             correctLevel: QRCode.CorrectLevel.H,

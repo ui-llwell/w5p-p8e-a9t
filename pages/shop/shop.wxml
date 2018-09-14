@@ -8,7 +8,7 @@
         </image> -->
     </view>
     <text class='h2'>{{shopName}}</text>
-    <text class='h2'>{{shop.shopRate}} {{shopRate}}</text>
+    <text class='h2'>{{shop.shopRate}} {{shopRate*100}}%</text>
     <button class='btn' bindtap='goToDetails'>{{shop.checkRecord}}</button>
     <view class='lang' bindtap='changeLanguage'>{{shop.lang}}</view>
   </view>
