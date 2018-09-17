@@ -112,17 +112,17 @@ Page({
                 userId: json.data.userId
               })
             } else {
-              if (wx.getStorageSync('langIndex') == 1) {
+              if (wx.getStorageSync('langCode') == 'ko') {
                 wx.showToast({
-                  title: '스캔 실패 하였습니다',
-                  icon: 'loading',
-                  duration: 1500
+                  title: '스캔 실패 하였습니다 다시 스캔해 주세요',
+                  icon: 'none',
+                  duration: 2500
                 })
               }else{
                 wx.showToast({
-                  title: '扫描失败',
-                  icon: 'loading',
-                  duration: 1500
+                  title: '扫描失败，请重新扫描',
+                  icon: 'none',
+                  duration: 2500
                 })
               }
               
@@ -132,6 +132,19 @@ Page({
         );
       },
       fail: (res) => {
+        if (wx.getStorageSync('langCode') == 'ko') {
+          wx.showToast({
+            title: '스캔 실패 하였습니다 다시 스캔해 주세요',
+            icon: 'none',
+            duration: 2500
+          })
+        } else {
+          wx.showToast({
+            title: '扫描失败，请重新扫描',
+            icon: 'none',
+            duration: 2500
+          })
+        }
         console.log(res);
       }
     })
@@ -179,7 +192,7 @@ Page({
         function (json) {
           // console.log(json);
           if (json.success) {
-            if (wx.getStorageSync('langIndex') == 1){
+            if (wx.getStorageSync('langCode') == 'ko'){
               wx.showToast({
                 title: '추가되었습니다',
                 duration: 1500
@@ -192,7 +205,7 @@ Page({
             }
             that.empty();
           } else {
-            if (wx.getStorageSync('langIndex') == 1) {
+            if (wx.getStorageSync('langCode') == 'ko') {
               wx.showToast({
                 title: '추가 실패 하였습니다， 다시 추가해 주세요',
                 icon: 'none',
@@ -213,17 +226,17 @@ Page({
 
 
     } else {
-      if (wx.getStorageSync('langIndex') == 1) {
+      if (wx.getStorageSync('langCode') == 'ko') {
         wx.showToast({
           title: '소비금액을 확인해주시고 바코드를 스캔해주세요.',
           icon: 'none',
-          duration: 1500
+          duration: 2500
         })
       }else{
         wx.showToast({
           title: '请确认消费金额，并扫描消费二维码',
           icon: 'none',
-          duration: 1500
+          duration: 2500
         })
       }
       
@@ -334,16 +347,16 @@ Page({
                 userId: json.data.userId
               })
             } else {
-              if (wx.getStorageSync('langIndex') == 1) {
+              if (wx.getStorageSync('langCode') == 'ko') {
                 wx.showToast({
-                  title: '스캔 실패 하였습니다',
-                  icon: 'loading',
+                  title: '스캔 실패 하였습니다 다시 스캔해 주세요',
+                  icon: 'none',
                   duration: 1500
                 })
               }else{
                 wx.showToast({
-                  title: '扫描失败',
-                  icon: 'loading',
+                  title: '扫描失败，请重新扫描',
+                  icon: 'none',
                   duration: 1500
                 })
               }
@@ -398,7 +411,7 @@ Page({
         function (json) {
           // console.log(json);
           if (json.success) {
-            if (wx.getStorageSync('langIndex') == 1) {
+            if (wx.getStorageSync('langCode') == 'ko') {
               wx.showToast({
                 title: '추가되었습니다',
                 duration: 1500
@@ -412,7 +425,7 @@ Page({
             that.emptyRefund();
 
           } else {
-            if (wx.getStorageSync('langIndex') == 1) {
+            if (wx.getStorageSync('langCode') == 'ko') {
               wx.showToast({
                 title: '추가 실패 하였습니다,다시 추가해 주세요',
                 icon: 'none',
@@ -435,7 +448,7 @@ Page({
 
 
     } else {
-      if (wx.getStorageSync('langIndex') == 1) {
+      if (wx.getStorageSync('langCode') == 'ko') {
         wx.showToast({
           title: '환불금액을 확인해주시고 바코드를 스캔해주세요.',
           icon: 'none',

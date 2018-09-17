@@ -72,3 +72,20 @@ margin-top: 50rpx;
   color: #0095FF;
 }
 
+.service {
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  right: 40rpx;
+  bottom: 90px;
+  position: absolute;
+}
+.service image {
+  width: 100%;
+  height: 100%;
+}
+.service_click {
+  position: absolute;
+  left:26rpx;
+  top:15rpx;
+}

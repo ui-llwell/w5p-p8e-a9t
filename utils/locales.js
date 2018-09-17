@@ -20,10 +20,10 @@ export default {
       "addConsumerCredentials": "添加消费凭证",
       "addRefundCredentials": "添加退费凭证",
       "scanImgUrlConsumerBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_normal@3x.png",
-      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_pink_selected@3x.png",
+      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_consumption_success@3x.png",
       
       "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_normal@3x.png",
-      "scanImgUrlRefundSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_scan_blue_selected@3x.png",
+      "scanImgUrlRefundSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_Refund_success@3x.png",
       "empty": "清空",
       "ensure": "确定",
     },
@@ -31,7 +31,8 @@ export default {
       "navigationBarTitle":"店铺",
       "checkRecord":"查看店铺记录",
       "lang":"한국어로 변경？",
-      "shopRate":"返点率"
+      "shopRate":"返点率",
+      "service": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/article_icon_service@3x.png"
     },
     "details": {
       "navigationBarTitle": "店铺记录",
@@ -45,7 +46,7 @@ export default {
       "consumeAll": "消费总金额",
       "refundAll": "退费总金额",
       "rebatesAll": "预计返利总金额",
-      "noRecord":'您还没有记录哦',
+      "noRecord":'您还没有相关记录哦',
       "znum": "共",
       "item": "条记录"
     },
@@ -88,21 +89,22 @@ export default {
       "navigationBarTitle": "샵",
       "checkRecord": "소비기록 검색",
       "lang": "切换成中文？",
-      "shopRate": "환불비율"
+      "shopRate": "페이백 비율",
+      "service": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/service@3x.png"
     },
 
     "details": {
       "navigationBarTitle": "소비기록",
-      "tabs": ["전부", "환급 미지불", "환급 지불완료"],
+      "tabs": ["전부", "페이백 미지불", "페이백 지불완료"],
       "consumeAmount": "소비금액",
       "refundAmount": "환불금액",
-      "rebatesRate": "환불비율",
-      "consumeRebate": "예상 소비 환급금액",
-      "refundRebate": "예상 환불 환급금액",
+      "rebatesRate": "페이백 비율",
+      "consumeRebate": "예상 소비 페이백 금액",
+      "refundRebate": "예상 환불 페이백 금액",
       "credentials": "소비 영수증",
       "consumeAll": "소비 총금액",
       "refundAll": "환불 총금액",
-      "rebatesAll": "예상 환급 총금액",
+      "rebatesAll": "예상 페이백 총금액",
       "noRecord": '기록이 없습니다',
       "znum": "총",
       "item": "개 기록"

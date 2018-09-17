@@ -20,7 +20,7 @@
                     </view>
                     <view class='warp_h2'>
                       <view class='warp_h2_img'>₩</view>
-                      <input type='text' class='warp_h2_text' value='{{ainput_money}}' bindinput='bindinputMoney'></input>
+                      <input type='digit' class='warp_h2_text' value='{{ainput_money}}' bindinput='bindinputMoney' maxlength='12'></input>
                     </view>
                     <!-- <view class='warp_h3'>
                       <view class='warp_h3_left'>
@@ -54,7 +54,7 @@
                     </view>
                     <view class='warp_h2'>
                       <view class='warp_h2_img'>₩-</view>
-                      <input type='text' class='warp_h2_text' value='{{binput_money}}' bindinput='bindinputMoneyRefund'></input>
+                      <input type='digit' class='warp_h2_text' value='{{binput_money}}' bindinput='bindinputMoneyRefund' maxlength='12'></input>
                     </view>
                     <!-- <view class='warp_h3'>
                       <view class='warp_h3_left'>

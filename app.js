@@ -4,7 +4,7 @@ import locales from './utils/locales'
 import T from './utils/i18n'
 
 T.registerLocale(locales);
-T.setLocaleByIndex(wx.getStorageSync('langIndex') || 1);
+T.setLocaleByIndex(wx.getStorageSync('langIndex') || 0);
 wx.T = T
 
 App({
@@ -50,7 +50,7 @@ App({
               }
 
             } else {
-              if (wx.getStorageSync('langIndex') == 1){
+              if (wx.getStorageSync('langCode') == 'ko'){
                 wx.showToast({
                   title: '로그인 실패 하였습니다',
                   icon: 'none',
@@ -74,9 +74,10 @@ App({
     })
   },
   Ajax: function (url, type, method, data, callback) {
-    wx.showLoading({
-      title: 'loading'
-    });
+    // wx.showLoading({
+    //   title: 'loading',
+    //   duration:1000,
+    // });
     var send = {
       token: wx.getStorageSync('token'),
       method: method,
@@ -99,7 +100,7 @@ App({
       fail: function (res) {
       },
       complete: function () {
-        wx.hideLoading();
+        // wx.hideLoading();
       }
     })
   }
