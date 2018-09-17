@@ -119,6 +119,9 @@ Page({
                   duration: 2500
                 })
               }else{
+                that.setData({
+                  scanningConsume: '',
+                })
                 wx.showToast({
                   title: '扫描失败，请重新扫描',
                   icon: 'none',
@@ -354,6 +357,9 @@ Page({
                   duration: 1500
                 })
               }else{
+                that.setData({
+                  scanningRefund: '',
+                })
                 wx.showToast({
                   title: '扫描失败，请重新扫描',
                   icon: 'none',
