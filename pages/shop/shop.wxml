@@ -9,6 +9,10 @@
     </view>
     <text class='h2'>{{shopName}}</text>
     <text class='h2'>{{shop.shopRate}} {{shopRate*100}}%</text>
+      <!-- <view class='service'>
+        <image src='{{shop.service}}'></image>
+        <contact-button class='service_click' size="120" session-from="weapp" type="default-dark" style='opacity:0'></contact-button>
+      </view> -->
     <button class='btn' bindtap='goToDetails'>{{shop.checkRecord}}</button>
     <view class='lang' bindtap='changeLanguage'>{{shop.lang}}</view>
   </view>

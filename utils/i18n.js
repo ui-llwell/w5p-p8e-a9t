@@ -2,7 +2,7 @@
 let T = {
   locale: null,
   locales: {},
-  langCode: ['zh', 'ko']
+  langCode: ['ko', 'zh']
 }
 
 T.registerLocale = function (locales) {

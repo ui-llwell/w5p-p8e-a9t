@@ -88,7 +88,7 @@
                     <rich-text>{{details.rebatesAll}}：<text class="consume">₩{{recordData.unPay.sumShopMoneyUnPay}}</text></rich-text>
                   </view>
                   <!-- 当内容List 不为空时隐藏 -->
-                  <view class='noRecord'  hidden="{{recordData.unPay.listUnPay != ''}}"> {{details.noRecord}}</view>
+                  <view class='noRecord'  hidden="{{recordData.unPay.listUnPay != ''}}">{{details.noRecord}}</view>
                 </view>
                 <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
                 <!-- ---------------------------已返利------------------------------ -->
