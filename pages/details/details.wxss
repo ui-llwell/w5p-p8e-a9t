@@ -20,7 +20,7 @@ page,
 }
 .weui-navbar__item.weui-bar__item_on{
   font-family: PingFangSC-Regular;
-font-size: 16px;
+font-size: 16rpx;
 color: #ED4C4C;
 letter-spacing: 0.19px;
 text-align: center;
@@ -55,13 +55,13 @@ text-align: center;
 }
 .unit-title-name{
   font-family: PingFangSC-Regular;
-  font-size: 16px;
+  font-size: 32rpx;
   color: #000000;
   letter-spacing: 0;
 }
 .unit-title-time{
   font-family: PingFangSC-Regular;
-  font-size: 12px;
+  font-size: 24rpx;
   color: #989898;
   letter-spacing: 0.14px;
 }
@@ -72,7 +72,7 @@ text-align: center;
 .unit-detail-mes{
   
   width: 540rpx;
-  font-size: 12px;
+  font-size: 24rpx;
   color: #000000;
 }
 .unit-detail-img{
@@ -82,7 +82,7 @@ text-align: center;
 
 .content-conclusion{
   font-family: PingFangSC-Light;
-  font-size: 14px;
+  font-size: 28rpx;
   color: #000000;
   line-height: 22px;
   text-align: right;
