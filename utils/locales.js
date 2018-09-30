@@ -78,10 +78,10 @@ export default {
       "addRefundCredentials": "환불 영수증 추가",
       
       "scanImgUrlConsumerBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_consumption_normal@3x.png",
-      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_consumption_success@3x.png",
+      "scanImgUrlConsumerSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_consumption_success_ko@3x.png",
 
       "scanImgUrlRefundBefore": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_refund_normal@3x.png",
-      "scanImgUrlRefundSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_Refund_success@3x.png",
+      "scanImgUrlRefundSuccess": "http://llwell-wxapp.oss-cn-beijing.aliyuncs.com/PurchasingAssistantShop/top_icon_Refund_success_ko@3x.png",
       "empty": "비우기",
       "ensure": "확인",
     },
