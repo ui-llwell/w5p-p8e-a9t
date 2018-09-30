@@ -55,7 +55,7 @@ Page({
       'Shop',
       'POST',
       'GetShop',
-      { lang: wx.getStorageInfoSync('langCode') },
+      { lang: wx.getStorageSync('langCode') },
       function (json) {
         // console.log('json', json);
         if (json.success) {
